@@ -5,6 +5,10 @@
  */
 package windows;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Walter Benítez
@@ -16,11 +20,17 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(0, 0, 0));
+        getContentPane().setBackground(new java.awt.Color(20, 34, 34));
         setSize(400, 550);
         setResizable(false);
         setTitle("Acceso al sistema");
         setLocationRelativeTo(null);
+        
+        //ICONO DE LA PANTALLA PRINCIPAL
+        ImageIcon img_ic = new ImageIcon("src/images/main_icon.png");
+        Icon icon_ic = new ImageIcon(img_ic.getImage().getScaledInstance(label_main_icon.getWidth(), label_main_icon.getHeight(), Image.SCALE_DEFAULT));
+        label_main_icon.setIcon(icon_ic);
+        this.repaint();
     }
 
     /**
@@ -32,8 +42,11 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_main_icon = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 180, 180));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -74,5 +87,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel label_main_icon;
     // End of variables declaration//GEN-END:variables
 }
