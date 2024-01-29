@@ -23,7 +23,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(20, 34, 34));
         setSize(400, 550);
         setResizable(false);
-        setTitle("Acceso al sistema");
+        setTitle("Acceso");
         setLocationRelativeTo(null);
         
         //ICONO DE LA PANTALLA PRINCIPAL
@@ -60,6 +60,7 @@ public class Login extends javax.swing.JFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
