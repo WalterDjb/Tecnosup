@@ -31,6 +31,12 @@ public class Login extends javax.swing.JFrame {
         Icon icon_ic = new ImageIcon(img_ic.getImage().getScaledInstance(label_main_icon.getWidth(), label_main_icon.getHeight(), Image.SCALE_DEFAULT));
         label_main_icon.setIcon(icon_ic);
         this.repaint();
+        
+        //ICONO DE LOG
+        ImageIcon img_log = new ImageIcon("src/images/log.png");
+        Icon icon_log = new ImageIcon(img_log.getImage().getScaledInstance(label_log.getWidth(), label_log.getHeight(), Image.SCALE_DEFAULT));
+        label_log.setIcon(icon_log);
+        this.repaint();
     }
 
     /**
@@ -42,26 +48,14 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_log = new javax.swing.JLabel();
         label_main_icon = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 180, 180));
-
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 260, 30));
-
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 350, 260, 30));
+        getContentPane().add(label_log, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 240, 160));
+        getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 180, 180));
 
         jButton1.setText("Iniciar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +63,7 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 440, 80, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 430, 110, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -77,10 +71,6 @@ public class Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,8 +109,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel label_log;
     private javax.swing.JLabel label_main_icon;
     // End of variables declaration//GEN-END:variables
 }
