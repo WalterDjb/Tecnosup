@@ -46,7 +46,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 180, 180));
+        getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 180, 180));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
