@@ -50,8 +50,8 @@ public class Login extends javax.swing.JFrame {
 
         boton_ini = new javax.swing.JButton();
         boton_exit = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        field_txt = new javax.swing.JTextField();
+        field_pass = new javax.swing.JPasswordField();
         label_log = new javax.swing.JLabel();
         label_main_icon = new javax.swing.JLabel();
 
@@ -86,20 +86,27 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(boton_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 8, 32, 32));
 
-        jTextField1.setBackground(new java.awt.Color(20, 34, 34));
-        jTextField1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        field_txt.setBackground(new java.awt.Color(20, 34, 34));
+        field_txt.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        field_txt.setForeground(new java.awt.Color(255, 255, 255));
+        field_txt.setBorder(null);
+        field_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                field_txtActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 329, 170, 30));
+        getContentPane().add(field_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 329, 170, 30));
 
-        jPasswordField1.setBackground(new java.awt.Color(20, 34, 34));
-        jPasswordField1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jPasswordField1.setBorder(null);
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 375, 170, 30));
+        field_pass.setBackground(new java.awt.Color(20, 34, 34));
+        field_pass.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        field_pass.setForeground(new java.awt.Color(255, 255, 255));
+        field_pass.setBorder(null);
+        field_pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                field_passActionPerformed(evt);
+            }
+        });
+        getContentPane().add(field_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 375, 170, 30));
         getContentPane().add(label_log, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 260, 230, 150));
         getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 200, 200));
 
@@ -115,9 +122,13 @@ public class Login extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_boton_exitActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void field_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_field_txtActionPerformed
+
+    private void field_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_field_passActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,8 +168,8 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_exit;
     private javax.swing.JButton boton_ini;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField field_pass;
+    private javax.swing.JTextField field_txt;
     private javax.swing.JLabel label_log;
     private javax.swing.JLabel label_main_icon;
     // End of variables declaration//GEN-END:variables
