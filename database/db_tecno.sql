@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-01-2024 a las 17:48:44
+-- Tiempo de generación: 30-01-2024 a las 19:46:08
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -84,7 +84,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `mail`, `phone`, `username`, `password`, `level`, `status`, `regfor`) VALUES
-(1, 'Walter Eduardo Benítez', 'walterdjb@gmail.com', '3794856308', 'walter', '1234', 'ROOT', 'active', 'walter');
+(1, 'Walter Eduardo Benítez', 'walterdjb@gmail.com', '3794856308', 'walter', '1234', 'ADM', 'active', 'walter');
 
 --
 -- Índices para tablas volcadas
