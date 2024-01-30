@@ -160,7 +160,7 @@ public class Login extends javax.swing.JFrame {
                 txt_userActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 329, 170, 30));
+        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 329, 166, 30));
 
         txt_pass.setBackground(new java.awt.Color(20, 34, 34));
         txt_pass.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -171,7 +171,7 @@ public class Login extends javax.swing.JFrame {
                 txt_passActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 375, 170, 30));
+        getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 375, 166, 30));
         getContentPane().add(label_log, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 260, 230, 150));
         getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 200, 200));
 
