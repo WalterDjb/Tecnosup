@@ -48,55 +48,73 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
+        boton_ini = new javax.swing.JButton();
+        boton_exit = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
         label_log = new javax.swing.JLabel();
         label_main_icon = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close_selected.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        boton_ini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boton_ini.png"))); // NOI18N
+        boton_ini.setBorderPainted(false);
+        boton_ini.setContentAreaFilled(false);
+        boton_ini.setMaximumSize(new java.awt.Dimension(220, 50));
+        boton_ini.setMinimumSize(new java.awt.Dimension(220, 50));
+        boton_ini.setPreferredSize(new java.awt.Dimension(220, 50));
+        boton_ini.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boton_ini_press.png"))); // NOI18N
+        boton_ini.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boton_ini_select.png"))); // NOI18N
+        boton_ini.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                boton_iniActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 8, 32, 32));
+        getContentPane().add(boton_ini, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 220, 50));
+
+        boton_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
+        boton_exit.setBorder(null);
+        boton_exit.setBorderPainted(false);
+        boton_exit.setContentAreaFilled(false);
+        boton_exit.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close_selected.png"))); // NOI18N
+        boton_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_exitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boton_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 8, 32, 32));
+
+        jTextField1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jTextField1.setOpaque(false);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 328, 170, 30));
+
+        jPasswordField1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 374, 170, 30));
         getContentPane().add(label_log, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 260, 230, 150));
         getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 200, 200));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boton_ini.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setMaximumSize(new java.awt.Dimension(220, 50));
-        jButton1.setMinimumSize(new java.awt.Dimension(220, 50));
-        jButton1.setPreferredSize(new java.awt.Dimension(220, 50));
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boton_ini_press.png"))); // NOI18N
-        jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boton_ini_select.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 220, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void boton_iniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_iniActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_boton_iniActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void boton_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_exitActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_boton_exitActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,8 +152,10 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton boton_exit;
+    private javax.swing.JButton boton_ini;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel label_log;
     private javax.swing.JLabel label_main_icon;
     // End of variables declaration//GEN-END:variables
