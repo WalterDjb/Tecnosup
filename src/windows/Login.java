@@ -231,6 +231,8 @@ public class Login extends javax.swing.JFrame {
             } catch (SQLException e) {
                 System.err.println("Error en el botón de INICIAR " + e);
                 JOptionPane.showMessageDialog(null, "Error al iniciar sesión, contacte al administrador");
+            } catch (Exception e){
+                JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos");
             }
         }
 
