@@ -71,7 +71,14 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(label_log, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 260, 230, 150));
         getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 200, 200));
 
-        jButton1.setText("Iniciar");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boton_ini.png"))); // NOI18N
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setMaximumSize(new java.awt.Dimension(220, 50));
+        jButton1.setMinimumSize(new java.awt.Dimension(220, 50));
+        jButton1.setPreferredSize(new java.awt.Dimension(220, 50));
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boton_ini_press.png"))); // NOI18N
+        jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boton_ini_select.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
