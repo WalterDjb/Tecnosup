@@ -5,6 +5,9 @@
  */
 package windows;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 /**
  *
  * @author Walter Benítez
@@ -22,6 +25,12 @@ public class Admin extends javax.swing.JFrame {
         setTitle("Administrador");
         setLocationRelativeTo(null);
     }
+    
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
+        return retValue;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,6 +44,7 @@ public class Admin extends javax.swing.JFrame {
         boton_exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
