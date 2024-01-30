@@ -145,6 +145,43 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Complete el campo de USUARIO");
         } else if(pass.equals("")){
             JOptionPane.showMessageDialog(null, "Complete el campo de CONTRASEÑA");
+        } else if((user.length() < 4 || user.length() > 20) && (pass.length() < 4 || pass.length() > 20)){
+            JOptionPane.showMessageDialog(null, "Longitud de USUARIO y CONTRASEÑA incorrectos (4 a 20 carácteres)");
+        } else if(user.length() < 4 || user.length() > 20){
+            JOptionPane.showMessageDialog(null, "Longitud de USUARIO incorrecto (4 a 20 carácteres)");
+        } else if(pass.length() < 4 || pass.length() > 20){
+            JOptionPane.showMessageDialog(null, "Longitud de CONTRASEÑA incorrecto (4 a 20 carácteres)");
+        } else{
+            try {
+                Connection cn = Conexion.connect();
+                PreparedStatement pst = cn.prepareStatement("select level, status, username, password from users where username = '" + user + "' and password = '" + pass + "'");
+                
+                ResultSet rs = pst.executeQuery();
+                
+                if(rs.next()){
+                    String level = rs.getString("level");
+                    String status = rs.getString("status");
+                    
+                    if(level.equalsIgnoreCase("ADM") && status.equalsIgnoreCase("active")){
+                        new Admin().setVisible(true);
+                        dispose();
+                    } else if(level.equalsIgnoreCase("REC") && status.equalsIgnoreCase("active")){
+                        new Receptor().setVisible(true);
+                        dispose();
+                    } else if(level.equalsIgnoreCase("TEC") && status.equalsIgnoreCase("active")){
+                        new Tecnico().setVisible(true);
+                        dispose();
+                    }
+                } else{
+                    JOptionPane.showMessageDialog(null, "Datos de acceso incorrectos");
+                    txt_user.setText("");
+                    txt_pass.setText("");
+                }
+                
+            } catch (SQLException e) {
+                System.err.println("Error en el botón de INICIAR " + e);
+                JOptionPane.showMessageDialog(null, "Error al iniciar sesión, contacte al administrador");
+            }
         }
         
     }//GEN-LAST:event_boton_iniActionPerformed

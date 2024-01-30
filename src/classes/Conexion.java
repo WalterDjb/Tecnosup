@@ -15,7 +15,7 @@ public class Conexion {
     
     public static Connection connect(){
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/db_tec", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/db_tecno", "root", "");
             return cn;
         } catch (SQLException e) {
             System.out.println("Error en conexión " + e);
