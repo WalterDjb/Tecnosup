@@ -99,7 +99,7 @@ public class Login extends javax.swing.JFrame {
                 boton_exitActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 8, 32, 32));
+        getContentPane().add(boton_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(369, -2, 32, 32));
 
         txt_user.setBackground(new java.awt.Color(20, 34, 34));
         txt_user.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
