@@ -11,14 +11,20 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.sql.*;
 import classes.Conexion;
+import java.awt.Component;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  *
  * @author Walter Benítez
  */
 public class Login extends javax.swing.JFrame {
-    
+
     public static String user = "";
     public static String pass = "";
 
@@ -32,24 +38,58 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         setTitle("Acceso");
         setLocationRelativeTo(null);
-        
+
         //ICONO DE LA PANTALLA PRINCIPAL
         ImageIcon img_ic = new ImageIcon("src/images/main_icon.png");
         Icon icon_ic = new ImageIcon(img_ic.getImage().getScaledInstance(label_main_icon.getWidth(), label_main_icon.getHeight(), Image.SCALE_DEFAULT));
         label_main_icon.setIcon(icon_ic);
         this.repaint();
-        
+
         //ICONO DE LOG
         ImageIcon img_log = new ImageIcon("src/images/log.png");
         Icon icon_log = new ImageIcon(img_log.getImage().getScaledInstance(label_log.getWidth(), label_log.getHeight(), Image.SCALE_DEFAULT));
         label_log.setIcon(icon_log);
         this.repaint();
+        
+        actualizar(txt_user, label_us, "USUARIO");
+        actualizar(txt_pass, label_con, "CONTRASEÑA");
+
     }
-    
+
     @Override
-    public Image getIconImage(){
+    public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
         return retValue;
+    }
+
+    private void actualizar(JTextField campo, JLabel etiqueta, String texto) {
+        
+        campo.getDocument().addDocumentListener(new DocumentListener() {
+            
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                cambiar();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                cambiar();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                cambiar();
+            }
+
+            public void cambiar() {
+                if (!(campo.getText().equals(""))) {
+                    etiqueta.setText("");
+                } else {
+                    etiqueta.setText(texto);
+                    
+                }
+            }
+        });
     }
 
     /**
@@ -63,6 +103,8 @@ public class Login extends javax.swing.JFrame {
 
         boton_ini = new javax.swing.JButton();
         boton_exit = new javax.swing.JButton();
+        label_us = new javax.swing.JLabel();
+        label_con = new javax.swing.JLabel();
         txt_user = new javax.swing.JTextField();
         txt_pass = new javax.swing.JPasswordField();
         label_log = new javax.swing.JLabel();
@@ -101,6 +143,14 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(boton_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(369, -1, 32, 32));
 
+        label_us.setForeground(new java.awt.Color(204, 204, 204));
+        label_us.setText("USUARIO");
+        getContentPane().add(label_us, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 336, -1, -1));
+
+        label_con.setForeground(new java.awt.Color(204, 204, 204));
+        label_con.setText("CONTRASEÑA");
+        getContentPane().add(label_con, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
+
         txt_user.setBackground(new java.awt.Color(20, 34, 34));
         txt_user.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         txt_user.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,7 +160,7 @@ public class Login extends javax.swing.JFrame {
                 txt_userActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 329, 170, 30));
+        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 329, 170, 30));
 
         txt_pass.setBackground(new java.awt.Color(20, 34, 34));
         txt_pass.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -121,11 +171,11 @@ public class Login extends javax.swing.JFrame {
                 txt_passActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 375, 170, 30));
+        getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 375, 170, 30));
         getContentPane().add(label_log, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 260, 230, 150));
         getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 200, 200));
 
-        label_ref.setForeground(new java.awt.Color(255, 255, 255));
+        label_ref.setForeground(new java.awt.Color(204, 204, 204));
         label_ref.setText("Software creado por Walter Eduardo Benítez ©");
         getContentPane().add(label_ref, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 520, -1, -1));
 
@@ -133,57 +183,57 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_iniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_iniActionPerformed
-        
+
         //RECUPERACIÓN DE LOS DATOS USUARIO Y CONTRASEÑA EN LAS VARIABLES ESTÁTICAS USER Y PASS.
         user = txt_user.getText().trim();
         pass = txt_pass.getText().trim();
-        
+
         //VALIDACIÓN DE DATOS DE LOS CAMPOS USUARIO Y CONTRASEÑA.
-        if(user.equals("") && pass.equals("")){
+        if (user.equals("") && pass.equals("")) {
             JOptionPane.showMessageDialog(null, "Complete todos los campos");
-        } else if(user.equals("")){
+        } else if (user.equals("")) {
             JOptionPane.showMessageDialog(null, "Complete el campo de USUARIO");
-        } else if(pass.equals("")){
+        } else if (pass.equals("")) {
             JOptionPane.showMessageDialog(null, "Complete el campo de CONTRASEÑA");
-        } else if((user.length() < 4 || user.length() > 20) && (pass.length() < 4 || pass.length() > 20)){
+        } else if ((user.length() < 4 || user.length() > 20) && (pass.length() < 4 || pass.length() > 20)) {
             JOptionPane.showMessageDialog(null, "Longitud de USUARIO y CONTRASEÑA incorrectos (4 a 20 carácteres)");
-        } else if(user.length() < 4 || user.length() > 20){
+        } else if (user.length() < 4 || user.length() > 20) {
             JOptionPane.showMessageDialog(null, "Longitud de USUARIO incorrecto (4 a 20 carácteres)");
-        } else if(pass.length() < 4 || pass.length() > 20){
+        } else if (pass.length() < 4 || pass.length() > 20) {
             JOptionPane.showMessageDialog(null, "Longitud de CONTRASEÑA incorrecto (4 a 20 carácteres)");
-        } else{
+        } else {
             try {
                 Connection cn = Conexion.connect();
                 PreparedStatement pst = cn.prepareStatement("select level, status, username, password from users where username = '" + user + "' and password = '" + pass + "'");
-                
+
                 ResultSet rs = pst.executeQuery();
-                
-                if(rs.next()){
+
+                if (rs.next()) {
                     String level = rs.getString("level");
                     String status = rs.getString("status");
-                    
-                    if(level.equalsIgnoreCase("ADM") && status.equalsIgnoreCase("active")){
+
+                    if (level.equalsIgnoreCase("ADM") && status.equalsIgnoreCase("active")) {
                         new Admin().setVisible(true);
                         dispose();
-                    } else if(level.equalsIgnoreCase("REC") && status.equalsIgnoreCase("active")){
+                    } else if (level.equalsIgnoreCase("REC") && status.equalsIgnoreCase("active")) {
                         new Receptor().setVisible(true);
                         dispose();
-                    } else if(level.equalsIgnoreCase("TEC") && status.equalsIgnoreCase("active")){
+                    } else if (level.equalsIgnoreCase("TEC") && status.equalsIgnoreCase("active")) {
                         new Tecnico().setVisible(true);
                         dispose();
                     }
-                } else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Datos de acceso incorrectos");
                     txt_user.setText("");
                     txt_pass.setText("");
                 }
-                
+
             } catch (SQLException e) {
                 System.err.println("Error en el botón de INICIAR " + e);
                 JOptionPane.showMessageDialog(null, "Error al iniciar sesión, contacte al administrador");
             }
         }
-        
+
     }//GEN-LAST:event_boton_iniActionPerformed
 
     private void boton_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_exitActionPerformed
@@ -192,7 +242,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_exitActionPerformed
 
     private void txt_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_userActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txt_userActionPerformed
 
     private void txt_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passActionPerformed
@@ -237,9 +287,11 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_exit;
     private javax.swing.JButton boton_ini;
+    private javax.swing.JLabel label_con;
     private javax.swing.JLabel label_log;
     private javax.swing.JLabel label_main_icon;
     private javax.swing.JLabel label_ref;
+    private javax.swing.JLabel label_us;
     private javax.swing.JPasswordField txt_pass;
     private javax.swing.JTextField txt_user;
     // End of variables declaration//GEN-END:variables
