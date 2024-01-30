@@ -6,14 +6,21 @@
 package windows;
 
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import java.sql.*;
+import classes.Conexion;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Walter Benítez
  */
 public class Login extends javax.swing.JFrame {
+    
+    public static String user = "";
+    public static String pass = "";
 
     /**
      * Creates new form Login
@@ -38,6 +45,12 @@ public class Login extends javax.swing.JFrame {
         label_log.setIcon(icon_log);
         this.repaint();
     }
+    
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
+        return retValue;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,12 +63,14 @@ public class Login extends javax.swing.JFrame {
 
         boton_ini = new javax.swing.JButton();
         boton_exit = new javax.swing.JButton();
-        field_txt = new javax.swing.JTextField();
-        field_pass = new javax.swing.JPasswordField();
+        txt_user = new javax.swing.JTextField();
+        txt_pass = new javax.swing.JPasswordField();
         label_log = new javax.swing.JLabel();
         label_main_icon = new javax.swing.JLabel();
+        label_ref = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -86,35 +101,52 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(boton_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 8, 32, 32));
 
-        field_txt.setBackground(new java.awt.Color(20, 34, 34));
-        field_txt.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        field_txt.setForeground(new java.awt.Color(255, 255, 255));
-        field_txt.setBorder(null);
-        field_txt.addActionListener(new java.awt.event.ActionListener() {
+        txt_user.setBackground(new java.awt.Color(20, 34, 34));
+        txt_user.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        txt_user.setForeground(new java.awt.Color(255, 255, 255));
+        txt_user.setBorder(null);
+        txt_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                field_txtActionPerformed(evt);
+                txt_userActionPerformed(evt);
             }
         });
-        getContentPane().add(field_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 329, 170, 30));
+        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 329, 170, 30));
 
-        field_pass.setBackground(new java.awt.Color(20, 34, 34));
-        field_pass.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        field_pass.setForeground(new java.awt.Color(255, 255, 255));
-        field_pass.setBorder(null);
-        field_pass.addActionListener(new java.awt.event.ActionListener() {
+        txt_pass.setBackground(new java.awt.Color(20, 34, 34));
+        txt_pass.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        txt_pass.setForeground(new java.awt.Color(255, 255, 255));
+        txt_pass.setBorder(null);
+        txt_pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                field_passActionPerformed(evt);
+                txt_passActionPerformed(evt);
             }
         });
-        getContentPane().add(field_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 375, 170, 30));
+        getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 375, 170, 30));
         getContentPane().add(label_log, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 260, 230, 150));
         getContentPane().add(label_main_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 200, 200));
+
+        label_ref.setForeground(new java.awt.Color(255, 255, 255));
+        label_ref.setText("Software creado por Walter Eduardo Benítez ©");
+        getContentPane().add(label_ref, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 520, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_iniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_iniActionPerformed
-        // TODO add your handling code here:
+        
+        //RECUPERACIÓN DE LOS DATOS USUARIO Y CONTRASEÑA EN LAS VARIABLES ESTÁTICAS USER Y PASS.
+        user = txt_user.getText().trim();
+        pass = txt_pass.getText().trim();
+        
+        //VALIDACIÓN DE DATOS DE LOS CAMPOS USUARIO Y CONTRASEÑA.
+        if(user.equals("") && pass.equals("")){
+            JOptionPane.showMessageDialog(null, "Complete todos los campos");
+        } else if(user.equals("")){
+            JOptionPane.showMessageDialog(null, "Complete el campo de USUARIO");
+        } else if(pass.equals("")){
+            JOptionPane.showMessageDialog(null, "Complete el campo de CONTRASEÑA");
+        }
+        
     }//GEN-LAST:event_boton_iniActionPerformed
 
     private void boton_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_exitActionPerformed
@@ -122,13 +154,13 @@ public class Login extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_boton_exitActionPerformed
 
-    private void field_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_txtActionPerformed
+    private void txt_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_userActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_field_txtActionPerformed
+    }//GEN-LAST:event_txt_userActionPerformed
 
-    private void field_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_passActionPerformed
+    private void txt_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_field_passActionPerformed
+    }//GEN-LAST:event_txt_passActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,9 +200,10 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_exit;
     private javax.swing.JButton boton_ini;
-    private javax.swing.JPasswordField field_pass;
-    private javax.swing.JTextField field_txt;
     private javax.swing.JLabel label_log;
     private javax.swing.JLabel label_main_icon;
+    private javax.swing.JLabel label_ref;
+    private javax.swing.JPasswordField txt_pass;
+    private javax.swing.JTextField txt_user;
     // End of variables declaration//GEN-END:variables
 }
