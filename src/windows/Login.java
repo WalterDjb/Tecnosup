@@ -49,6 +49,7 @@ public class Login extends javax.swing.JFrame {
         label_log.setIcon(icon_log);
         this.repaint();
         
+        //ACTUALIZACIÓN DE LABEL "USUARIO" Y "CONTRASEÑA" SI SE ESCRIBE ALGO EN LOS CAMPOS TXT_CON Y TXT_USER
         actualizar(txt_user, label_us, "USUARIO");
         actualizar(txt_pass, label_con, "CONTRASEÑA");
 
