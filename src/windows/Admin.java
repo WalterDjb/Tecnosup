@@ -59,6 +59,12 @@ public class Admin extends javax.swing.JFrame {
         label_name_user.setForeground(new java.awt.Color(255, 255, 255));
         label_name_user.setText("jLabel1");
         getContentPane().add(label_name_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
+        boton_registrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user.png"))); // NOI18N
+        boton_registrar.setBorderPainted(false);
+        boton_registrar.setContentAreaFilled(false);
+        boton_registrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user_press.png"))); // NOI18N
+        boton_registrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user_select.png"))); // NOI18N
         getContentPane().add(boton_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 128, 128));
         getContentPane().add(boton_gestion_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 128, 128));
         getContentPane().add(boton_provisorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 128, 128));
