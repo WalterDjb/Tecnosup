@@ -41,12 +41,30 @@ public class Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_name_user = new javax.swing.JLabel();
+        boton_registrar = new javax.swing.JButton();
+        boton_gestion_user = new javax.swing.JButton();
+        boton_provisorio = new javax.swing.JButton();
+        boton_receptor = new javax.swing.JButton();
+        boton_tecnico = new javax.swing.JButton();
+        boton_info = new javax.swing.JButton();
         boton_exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_name_user.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        label_name_user.setForeground(new java.awt.Color(255, 255, 255));
+        label_name_user.setText("jLabel1");
+        getContentPane().add(label_name_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        getContentPane().add(boton_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 128, 128));
+        getContentPane().add(boton_gestion_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 128, 128));
+        getContentPane().add(boton_provisorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 128, 128));
+        getContentPane().add(boton_receptor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 128, 128));
+        getContentPane().add(boton_tecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 128, 128));
+        getContentPane().add(boton_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 128, 128));
 
         boton_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         boton_exit.setBorder(null);
@@ -105,5 +123,12 @@ public class Admin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_exit;
+    private javax.swing.JButton boton_gestion_user;
+    private javax.swing.JButton boton_info;
+    private javax.swing.JButton boton_provisorio;
+    private javax.swing.JButton boton_receptor;
+    private javax.swing.JButton boton_registrar;
+    private javax.swing.JButton boton_tecnico;
+    private javax.swing.JLabel label_name_user;
     // End of variables declaration//GEN-END:variables
 }
