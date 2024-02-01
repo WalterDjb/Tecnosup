@@ -72,11 +72,11 @@ public class Admin extends javax.swing.JFrame {
         boton_gestion_user.setContentAreaFilled(false);
         boton_gestion_user.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adm_user_press.png"))); // NOI18N
         boton_gestion_user.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adm_user_select.png"))); // NOI18N
-        getContentPane().add(boton_gestion_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 128, 128));
+        getContentPane().add(boton_gestion_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 80, 128, 128));
 
         boton_provisorio.setBorderPainted(false);
         boton_provisorio.setContentAreaFilled(false);
-        getContentPane().add(boton_provisorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 128, 128));
+        getContentPane().add(boton_provisorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 80, 128, 128));
 
         boton_receptor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mod_recep.png"))); // NOI18N
         boton_receptor.setBorderPainted(false);
@@ -90,14 +90,14 @@ public class Admin extends javax.swing.JFrame {
         boton_tecnico.setContentAreaFilled(false);
         boton_tecnico.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mod_tec_press.png"))); // NOI18N
         boton_tecnico.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mod_tec_select.png"))); // NOI18N
-        getContentPane().add(boton_tecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 128, 128));
+        getContentPane().add(boton_tecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 250, 128, 128));
 
         boton_info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/info.png"))); // NOI18N
         boton_info.setBorderPainted(false);
         boton_info.setContentAreaFilled(false);
         boton_info.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/info_press.png"))); // NOI18N
         boton_info.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/info_select.png"))); // NOI18N
-        getContentPane().add(boton_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 128, 128));
+        getContentPane().add(boton_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 250, 128, 128));
 
         boton_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         boton_exit.setBorder(null);
