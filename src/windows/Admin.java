@@ -94,6 +94,11 @@ public class Admin extends javax.swing.JFrame {
         boton_registrar.setContentAreaFilled(false);
         boton_registrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user_press.png"))); // NOI18N
         boton_registrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user_select.png"))); // NOI18N
+        boton_registrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_registrarActionPerformed(evt);
+            }
+        });
         getContentPane().add(boton_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 128, 128));
 
         boton_gestion_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adm_user.png"))); // NOI18N
@@ -147,6 +152,11 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_boton_exitActionPerformed
+
+    private void boton_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_registrarActionPerformed
+        new AddUser().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_boton_registrarActionPerformed
 
     /**
      * @param args the command line arguments
