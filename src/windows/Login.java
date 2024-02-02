@@ -34,7 +34,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(20, 34, 34));
         setSize(400, 550);
         setResizable(false);
-        setTitle("Acceso");
+        setTitle("Tecnosup - Acceso");
         setLocationRelativeTo(null);
 
         //ICONO DE LA PANTALLA PRINCIPAL

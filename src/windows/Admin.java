@@ -5,25 +5,49 @@
  */
 package windows;
 
+import java.sql.*;
+import classes.Conexion;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.WindowConstants;
 
 /**
  *
  * @author Walter Benítez
  */
 public class Admin extends javax.swing.JFrame {
-
+    private String name;
+    private int sesion;
+    
     /**
      * Creates new form Admin
      */
     public Admin() {
+        sesion = 1;
+        
         initComponents();
         getContentPane().setBackground(new java.awt.Color(20, 34, 34));
         setSize(650, 430);
         setResizable(false);
-        setTitle("Administrador");
+        setTitle("Tecnosup - Administrador");
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
+        
+        //RECUPERAR EL NOMBRE DEL USUARIO QUE INICIA SESIÓN PARA MOSTRARLO EN PANTALLA
+        try {
+            Connection cn = Conexion.connect();
+            PreparedStatement pst = cn.prepareStatement("select name from users where username = '" + Login.user + "'");
+            
+            ResultSet rs = pst.executeQuery();
+            
+            if(rs.next()){
+                name = rs.getString("name");
+                label_name_user.setText(name);
+            }
+        } catch (Exception e) {
+            System.err.println("Error en conexión desde Admin.java " + e);
+        }
     }
     
     @Override
@@ -41,6 +65,7 @@ public class Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_ref = new javax.swing.JLabel();
         label_name_user = new javax.swing.JLabel();
         boton_registrar = new javax.swing.JButton();
         boton_gestion_user = new javax.swing.JButton();
@@ -55,7 +80,11 @@ public class Admin extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        label_name_user.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        label_ref.setForeground(new java.awt.Color(204, 204, 204));
+        label_ref.setText("Software creado por Walter Eduardo Benítez ©");
+        getContentPane().add(label_ref, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 405, -1, -1));
+
+        label_name_user.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         label_name_user.setForeground(new java.awt.Color(255, 255, 255));
         label_name_user.setText("Bienvenido Walter Eduardo Benítez");
         getContentPane().add(label_name_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
@@ -163,5 +192,6 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JButton boton_registrar;
     private javax.swing.JButton boton_tecnico;
     private javax.swing.JLabel label_name_user;
+    private javax.swing.JLabel label_ref;
     // End of variables declaration//GEN-END:variables
 }
