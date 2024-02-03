@@ -53,6 +53,8 @@ public class AddUser extends javax.swing.JFrame {
     private void initComponents() {
 
         label_ref = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         boton_exit = new javax.swing.JButton();
         label_fields = new javax.swing.JLabel();
 
@@ -64,6 +66,12 @@ public class AddUser extends javax.swing.JFrame {
         label_ref.setForeground(new java.awt.Color(204, 204, 204));
         label_ref.setText("Software creado por Walter Eduardo Benítez ©");
         getContentPane().add(label_ref, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 405, -1, -1));
+
+        jButton1.setText("jButton1");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 100, 100));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 240, 40));
 
         boton_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         boton_exit.setBorder(null);
@@ -124,6 +132,8 @@ public class AddUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_exit;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel label_fields;
     private javax.swing.JLabel label_ref;
     // End of variables declaration//GEN-END:variables
