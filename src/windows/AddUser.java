@@ -9,6 +9,8 @@ import java.sql.*;
 import classes.Conexion;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.WindowConstants;
 
 /**
@@ -28,7 +30,11 @@ public class AddUser extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
-        
+        //AGREGO AQUÍ LOS CAMPOS PARA COMPLETAR EN MODO IMAGEN PNG
+        ImageIcon img_fields = new ImageIcon("src/images/add_user_field.png");
+        Icon icon_fields = new ImageIcon(img_fields.getImage().getScaledInstance(label_fields.getWidth(), label_fields.getHeight(), Image.SCALE_DEFAULT));
+        label_fields.setIcon(icon_fields);
+        this.repaint();
     }
     
     @Override
@@ -48,6 +54,7 @@ public class AddUser extends javax.swing.JFrame {
 
         label_ref = new javax.swing.JLabel();
         boton_exit = new javax.swing.JButton();
+        label_fields = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -69,6 +76,7 @@ public class AddUser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(boton_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, -1, 32, 32));
+        getContentPane().add(label_fields, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -116,6 +124,7 @@ public class AddUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_exit;
+    private javax.swing.JLabel label_fields;
     private javax.swing.JLabel label_ref;
     // End of variables declaration//GEN-END:variables
 }
