@@ -52,6 +52,14 @@ public class AddUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_name = new javax.swing.JLabel();
+        txt_name = new javax.swing.JTextField();
+        label_last_name = new javax.swing.JLabel();
+        txt_last_name = new javax.swing.JTextField();
+        label_phone = new javax.swing.JLabel();
+        txt_phone = new javax.swing.JTextField();
+        label_mail = new javax.swing.JLabel();
+        txt_mail = new javax.swing.JTextField();
         label_ref = new javax.swing.JLabel();
         boton_save = new javax.swing.JButton();
         combo_rol = new javax.swing.JComboBox<>();
@@ -62,6 +70,66 @@ public class AddUser extends javax.swing.JFrame {
         setIconImage(getIconImage());
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_name.setForeground(new java.awt.Color(204, 204, 204));
+        label_name.setText("NOMBRE");
+        getContentPane().add(label_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 98, -1, -1));
+
+        txt_name.setBackground(new java.awt.Color(20, 34, 34));
+        txt_name.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        txt_name.setForeground(new java.awt.Color(255, 255, 255));
+        txt_name.setBorder(null);
+        txt_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 90, 268, 30));
+
+        label_last_name.setForeground(new java.awt.Color(204, 204, 204));
+        label_last_name.setText("APELLIDO");
+        getContentPane().add(label_last_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 98, -1, -1));
+
+        txt_last_name.setBackground(new java.awt.Color(20, 34, 34));
+        txt_last_name.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        txt_last_name.setForeground(new java.awt.Color(255, 255, 255));
+        txt_last_name.setBorder(null);
+        txt_last_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_last_nameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_last_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 90, 268, 30));
+
+        label_phone.setForeground(new java.awt.Color(204, 204, 204));
+        label_phone.setText("TELÉFONO");
+        getContentPane().add(label_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 170, -1, -1));
+
+        txt_phone.setBackground(new java.awt.Color(20, 34, 34));
+        txt_phone.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        txt_phone.setForeground(new java.awt.Color(255, 255, 255));
+        txt_phone.setBorder(null);
+        txt_phone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_phoneActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 162, 268, 30));
+
+        label_mail.setForeground(new java.awt.Color(204, 204, 204));
+        label_mail.setText("CORREO ELECTRÓNICO");
+        getContentPane().add(label_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 170, -1, -1));
+
+        txt_mail.setBackground(new java.awt.Color(20, 34, 34));
+        txt_mail.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        txt_mail.setForeground(new java.awt.Color(255, 255, 255));
+        txt_mail.setBorder(null);
+        txt_mail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_mailActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 162, 268, 30));
 
         label_ref.setForeground(new java.awt.Color(204, 204, 204));
         label_ref.setText("Software creado por Walter Eduardo Benítez ©");
@@ -91,6 +159,22 @@ public class AddUser extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_boton_exitActionPerformed
+
+    private void txt_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nameActionPerformed
+
+    }//GEN-LAST:event_txt_nameActionPerformed
+
+    private void txt_last_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_last_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_last_nameActionPerformed
+
+    private void txt_phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_phoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_phoneActionPerformed
+
+    private void txt_mailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_mailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_mailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,6 +217,14 @@ public class AddUser extends javax.swing.JFrame {
     private javax.swing.JButton boton_save;
     private javax.swing.JComboBox<String> combo_rol;
     private javax.swing.JLabel label_fields;
+    private javax.swing.JLabel label_last_name;
+    private javax.swing.JLabel label_mail;
+    private javax.swing.JLabel label_name;
+    private javax.swing.JLabel label_phone;
     private javax.swing.JLabel label_ref;
+    private javax.swing.JTextField txt_last_name;
+    private javax.swing.JTextField txt_mail;
+    private javax.swing.JTextField txt_name;
+    private javax.swing.JTextField txt_phone;
     // End of variables declaration//GEN-END:variables
 }
