@@ -11,11 +11,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.sql.*;
 import classes.Conexion;
-import javax.swing.JLabel;
+import classes.Utilidades;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 
 /**
  *
@@ -50,8 +47,8 @@ public class Login extends javax.swing.JFrame {
         this.repaint();
         
         //ACTUALIZACIÓN DE LABEL "USUARIO" Y "CONTRASEÑA" SI SE ESCRIBE ALGO EN LOS CAMPOS TXT_CON Y TXT_USER
-        actualizar(txt_user, label_us, "USUARIO");
-        actualizar(txt_pass, label_con, "CONTRASEÑA");
+        Utilidades.actualizar(txt_user, label_us, "USUARIO");
+        Utilidades.actualizar(txt_pass, label_con, "CONTRASEÑA");
 
     }
 
@@ -59,36 +56,6 @@ public class Login extends javax.swing.JFrame {
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
         return retValue;
-    }
-
-    private void actualizar(JTextField campo, JLabel etiqueta, String texto) {
-        
-        campo.getDocument().addDocumentListener(new DocumentListener() {
-            
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                cambiar();
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                cambiar();
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                cambiar();
-            }
-
-            public void cambiar() {
-                if (!(campo.getText().equals(""))) {
-                    etiqueta.setText("");
-                } else {
-                    etiqueta.setText(texto);
-                    
-                }
-            }
-        });
     }
 
     /**

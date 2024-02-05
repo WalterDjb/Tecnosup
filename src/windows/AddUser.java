@@ -5,8 +5,7 @@
  */
 package windows;
 
-import java.sql.*;
-import classes.Conexion;
+import classes.Utilidades;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.Icon;
@@ -18,6 +17,7 @@ import javax.swing.WindowConstants;
  * @author Walter Benítez
  */
 public class AddUser extends javax.swing.JFrame {
+
     /**
      * Creates new form Admin
      */
@@ -29,16 +29,24 @@ public class AddUser extends javax.swing.JFrame {
         setTitle("Tecnosup - Agregar usuario");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        
+
         //AGREGO AQUÍ LOS CAMPOS PARA COMPLETAR EN MODO IMAGEN PNG
         ImageIcon img_fields = new ImageIcon("src/images/add_user_field.png");
         Icon icon_fields = new ImageIcon(img_fields.getImage().getScaledInstance(label_fields.getWidth(), label_fields.getHeight(), Image.SCALE_DEFAULT));
         label_fields.setIcon(icon_fields);
         this.repaint();
+        
+        //ACTUALIZACIÓN DE LABELS CUANDO SE ESCRIBE ALGO EN LOS CAMPOS Y CUANDO SE DEJA EN BLANCO LOS MISMOS
+        Utilidades.actualizar(txt_name, label_name, "NOMBRE");
+        Utilidades.actualizar(txt_last_name, label_last_name, "APELLIDO");
+        Utilidades.actualizar(txt_phone, label_phone, "TELÉFONO");
+        Utilidades.actualizar(txt_mail, label_mail, "CORREO ELECTRÓNICO");
+        Utilidades.actualizar(txt_user, label_user, "USUARIO");
+        Utilidades.actualizar(txt_pass, label_pass, "CONTRASEÑA");
     }
-    
+
     @Override
-    public Image getIconImage(){
+    public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
         return retValue;
     }
