@@ -65,6 +65,7 @@ public class AddUser extends javax.swing.JFrame {
         label_pass = new javax.swing.JLabel();
         txt_pass = new javax.swing.JTextField();
         label_ref = new javax.swing.JLabel();
+        boton_atras = new javax.swing.JButton();
         boton_save = new javax.swing.JButton();
         combo_rol = new javax.swing.JComboBox<>();
         boton_exit = new javax.swing.JButton();
@@ -168,6 +169,18 @@ public class AddUser extends javax.swing.JFrame {
         label_ref.setForeground(new java.awt.Color(204, 204, 204));
         label_ref.setText("Software creado por Walter Eduardo Benítez ©");
         getContentPane().add(label_ref, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 405, -1, -1));
+
+        boton_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/atras.png"))); // NOI18N
+        boton_atras.setText("<Atrás");
+        boton_atras.setBorderPainted(false);
+        boton_atras.setContentAreaFilled(false);
+        boton_atras.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/atras_select.png"))); // NOI18N
+        boton_atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_atrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boton_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 28, 50, 50));
         getContentPane().add(boton_save, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 100, 100));
 
         combo_rol.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -219,6 +232,11 @@ public class AddUser extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_passActionPerformed
 
+    private void boton_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_atrasActionPerformed
+        new Admin().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_boton_atrasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -256,6 +274,7 @@ public class AddUser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_atras;
     private javax.swing.JButton boton_exit;
     private javax.swing.JButton boton_save;
     private javax.swing.JComboBox<String> combo_rol;
