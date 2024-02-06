@@ -196,7 +196,7 @@ public class AddUser extends javax.swing.JFrame {
         boton_save.setContentAreaFilled(false);
         boton_save.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save_press.png"))); // NOI18N
         boton_save.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save_select.png"))); // NOI18N
-        getContentPane().add(boton_save, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 292, 90, 90));
+        getContentPane().add(boton_save, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 294, 90, 90));
 
         combo_rol.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "RECEPCIONISTA", "TECNICO" }));
