@@ -6,11 +6,13 @@
 package windows;
 
 import classes.Utilidades;
+import classes.Conexion;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.WindowConstants;
+import java.sql.*;
 
 /**
  *
@@ -179,7 +181,6 @@ public class AddUser extends javax.swing.JFrame {
         getContentPane().add(label_ref, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 405, -1, -1));
 
         boton_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/atras.png"))); // NOI18N
-        boton_atras.setText("<Atrás");
         boton_atras.setBorderPainted(false);
         boton_atras.setContentAreaFilled(false);
         boton_atras.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/atras_select.png"))); // NOI18N
@@ -189,11 +190,17 @@ public class AddUser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(boton_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 28, 50, 50));
-        getContentPane().add(boton_save, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 100, 100));
+
+        boton_save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
+        boton_save.setBorderPainted(false);
+        boton_save.setContentAreaFilled(false);
+        boton_save.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save_press.png"))); // NOI18N
+        boton_save.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save_select.png"))); // NOI18N
+        getContentPane().add(boton_save, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 292, 90, 90));
 
         combo_rol.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "RECEPCIONISTA", "TECNICO" }));
-        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 240, 40));
+        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 327, 240, 40));
 
         boton_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         boton_exit.setBorder(null);
