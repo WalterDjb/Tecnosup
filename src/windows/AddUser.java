@@ -74,6 +74,7 @@ public class AddUser extends javax.swing.JFrame {
         txt_user = new javax.swing.JTextField();
         label_pass = new javax.swing.JLabel();
         txt_pass = new javax.swing.JTextField();
+        label_user1 = new javax.swing.JLabel();
         label_ref = new javax.swing.JLabel();
         boton_atras = new javax.swing.JButton();
         boton_save = new javax.swing.JButton();
@@ -176,6 +177,10 @@ public class AddUser extends javax.swing.JFrame {
         });
         getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 234, 268, 30));
 
+        label_user1.setForeground(new java.awt.Color(204, 204, 204));
+        label_user1.setText("RANGO:");
+        getContentPane().add(label_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 340, -1, -1));
+
         label_ref.setForeground(new java.awt.Color(204, 204, 204));
         label_ref.setText("Software creado por Walter Eduardo Benítez ©");
         getContentPane().add(label_ref, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 405, -1, -1));
@@ -196,11 +201,11 @@ public class AddUser extends javax.swing.JFrame {
         boton_save.setContentAreaFilled(false);
         boton_save.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save_press.png"))); // NOI18N
         boton_save.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save_select.png"))); // NOI18N
-        getContentPane().add(boton_save, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 294, 90, 90));
+        getContentPane().add(boton_save, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 303, 90, 90));
 
         combo_rol.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "RECEPCIONISTA", "TECNICO" }));
-        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 327, 240, 40));
+        combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "RECEPCIONISTA", "TÉCNICO" }));
+        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 327, 210, 40));
 
         boton_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         boton_exit.setBorder(null);
@@ -301,6 +306,7 @@ public class AddUser extends javax.swing.JFrame {
     private javax.swing.JLabel label_phone;
     private javax.swing.JLabel label_ref;
     private javax.swing.JLabel label_user;
+    private javax.swing.JLabel label_user1;
     private javax.swing.JTextField txt_last_name;
     private javax.swing.JTextField txt_mail;
     private javax.swing.JTextField txt_name;

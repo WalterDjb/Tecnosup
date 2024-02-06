@@ -269,6 +269,19 @@
         </Constraint>
       </Constraints>
     </Component>
+    <Component class="javax.swing.JLabel" name="label_user1">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="RANGO:"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="35" y="340" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
     <Component class="javax.swing.JLabel" name="label_ref">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -318,7 +331,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="520" y="294" width="90" height="90"/>
+          <AbsoluteConstraints x="520" y="303" width="90" height="90"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -331,7 +344,7 @@
           <StringArray count="3">
             <StringItem index="0" value="ADMINISTRADOR"/>
             <StringItem index="1" value="RECEPCIONISTA"/>
-            <StringItem index="2" value="TECNICO"/>
+            <StringItem index="2" value="T&#xc9;CNICO"/>
           </StringArray>
         </Property>
       </Properties>
@@ -340,7 +353,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="327" width="240" height="40"/>
+          <AbsoluteConstraints x="90" y="327" width="210" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
