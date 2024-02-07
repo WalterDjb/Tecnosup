@@ -108,7 +108,7 @@ public class AddUser extends javax.swing.JFrame {
         getContentPane().add(label_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 98, -1, -1));
 
         label_name_ver.setForeground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(label_name_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 95, 20, 20));
+        getContentPane().add(label_name_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 96, 20, 20));
 
         txt_name.setBackground(new java.awt.Color(20, 34, 34));
         txt_name.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -126,7 +126,7 @@ public class AddUser extends javax.swing.JFrame {
         getContentPane().add(label_last_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 98, -1, -1));
 
         label_last_name_ver.setForeground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(label_last_name_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 95, 20, 20));
+        getContentPane().add(label_last_name_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 96, 20, 20));
 
         txt_last_name.setBackground(new java.awt.Color(20, 34, 34));
         txt_last_name.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -141,10 +141,10 @@ public class AddUser extends javax.swing.JFrame {
 
         label_phone.setForeground(new java.awt.Color(204, 204, 204));
         label_phone.setText("TELÉFONO");
-        getContentPane().add(label_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 170, -1, -1));
+        getContentPane().add(label_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 171, -1, -1));
 
         label_phone_ver.setForeground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(label_phone_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 167, 20, 20));
+        getContentPane().add(label_phone_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 169, 20, 20));
 
         txt_phone.setBackground(new java.awt.Color(20, 34, 34));
         txt_phone.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -155,14 +155,14 @@ public class AddUser extends javax.swing.JFrame {
                 txt_phoneActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 162, 268, 30));
+        getContentPane().add(txt_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 163, 268, 30));
 
         label_mail.setForeground(new java.awt.Color(204, 204, 204));
         label_mail.setText("CORREO ELECTRÓNICO");
-        getContentPane().add(label_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 170, -1, -1));
+        getContentPane().add(label_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 171, -1, -1));
 
         label_mail_ver.setForeground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(label_mail_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 167, 20, 20));
+        getContentPane().add(label_mail_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 169, 20, 20));
 
         txt_mail.setBackground(new java.awt.Color(20, 34, 34));
         txt_mail.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -173,14 +173,14 @@ public class AddUser extends javax.swing.JFrame {
                 txt_mailActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 162, 268, 30));
+        getContentPane().add(txt_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 163, 268, 30));
 
         label_user.setForeground(new java.awt.Color(204, 204, 204));
         label_user.setText("USUARIO");
-        getContentPane().add(label_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 242, -1, -1));
+        getContentPane().add(label_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 243, -1, -1));
 
         label_user_ver.setForeground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(label_user_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 239, 20, 20));
+        getContentPane().add(label_user_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 241, 20, 20));
 
         txt_user.setBackground(new java.awt.Color(20, 34, 34));
         txt_user.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -191,14 +191,14 @@ public class AddUser extends javax.swing.JFrame {
                 txt_userActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 234, 268, 30));
+        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 235, 268, 30));
 
         label_pass.setForeground(new java.awt.Color(204, 204, 204));
         label_pass.setText("CONTRASEÑA");
-        getContentPane().add(label_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 242, -1, -1));
+        getContentPane().add(label_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 243, -1, -1));
 
         label_pass_ver.setForeground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(label_pass_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 239, 20, 20));
+        getContentPane().add(label_pass_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 241, 20, 20));
 
         txt_pass.setBackground(new java.awt.Color(20, 34, 34));
         txt_pass.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -209,7 +209,7 @@ public class AddUser extends javax.swing.JFrame {
                 txt_passActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 234, 268, 30));
+        getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 235, 268, 30));
 
         label_rango.setForeground(new java.awt.Color(204, 204, 204));
         label_rango.setText("RANGO:");
