@@ -14,6 +14,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.WindowConstants;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -265,6 +266,8 @@ public class AddUser extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_atrasActionPerformed
 
     private void boton_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_saveActionPerformed
+        
+        //VERIFICAMOS SI ALGUN CAMPO ESTÁ VACÍO, SI ES ASÍ CAMBIAMOS EL COLOR DEL LABEL CORRESPONDIENTE
         if (txt_name.getText().trim().equals("")) {
             label_name.setForeground(Color.red);
         }
@@ -287,6 +290,25 @@ public class AddUser extends javax.swing.JFrame {
         
         if (txt_pass.getText().trim().equals("")) {
             label_pass.setForeground(Color.red);
+        }
+        
+        
+        //VERIFICAMOS QUE EL USUARIO ESTÉ DISPONIBLE, SI YA ESTÁ OCUPADO DEBE DE HACERCELO SABER AL USUARIO
+        try {
+            Connection cn = Conexion.connect();
+            PreparedStatement pst = cn.prepareStatement("select username from users where username = '" + txt_user.getText().trim() + "'");
+            
+            ResultSet rs = pst.executeQuery();
+            
+            if(rs.next()){
+                txt_user.setForeground(Color.red);
+                JOptionPane.showMessageDialog(null, "Nombre de usuario ocupado, utilice otro");
+                cn.close();
+            } else {}
+            
+        } catch (SQLException e) {
+            System.err.println("Error en validar nombre de usuario + " + e);
+            JOptionPane.showMessageDialog(null, "Error al verificar usuario, contacte a su administrador.");
         }
     }//GEN-LAST:event_boton_saveActionPerformed
 
