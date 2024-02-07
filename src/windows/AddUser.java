@@ -269,36 +269,48 @@ public class AddUser extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_atrasActionPerformed
 
     private void boton_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_saveActionPerformed
+        int i = 0;
         
         //VERIFICAMOS SI ALGUN CAMPO ESTÁ VACÍO, SI ES ASÍ CAMBIAMOS EL COLOR DEL LABEL CORRESPONDIENTE
         if (txt_name.getText().trim().equals("")) {
             label_name.setForeground(Color.red);
+            i++;
         }
 
         if (txt_last_name.getText().trim().equals("")) {
             label_last_name.setForeground(Color.red);
+            i++;
         }
 
         if (txt_phone.getText().trim().equals("")) {
             label_phone.setForeground(Color.red);
+            i++;
         }
 
         if (txt_mail.getText().trim().equals("")) {
             label_mail.setForeground(Color.red);
+            i++;
         }
         
         if (txt_user.getText().trim().equals("")) {
             label_user.setForeground(Color.red);
+            i++;
         }
         
         if (txt_pass.getText().trim().equals("")) {
             label_pass.setForeground(Color.red);
+            i++;
         }
         
         
         //SI EL USUARIO INGRESADO NO ESTÁ DISPONIBLE(VERIFICADO CON EL MÉTODO verificarUsuario DE LA CLASE Utilidades) SE LO HACEMOS SABER AL USUARIO PARA QUE LO CAMBIE
         if(txt_user.getForeground().equals(Color.red)){
             JOptionPane.showMessageDialog(null, "Usuario no disponible, elija otro");
+        }
+        
+        if(i == 0){
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe completar todos los campos");
         }
     }//GEN-LAST:event_boton_saveActionPerformed
 
