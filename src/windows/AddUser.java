@@ -41,12 +41,15 @@ public class AddUser extends javax.swing.JFrame {
         this.repaint();
 
         //ACTUALIZACIÓN DE LABELS CUANDO SE ESCRIBE ALGO EN LOS CAMPOS Y CUANDO SE DEJA EN BLANCO LOS MISMOS
-        Utilidades.actualizar(txt_name, label_name, "NOMBRE");
-        Utilidades.actualizar(txt_last_name, label_last_name, "APELLIDO");
-        Utilidades.actualizar(txt_phone, label_phone, "TELÉFONO");
-        Utilidades.actualizar(txt_mail, label_mail, "CORREO ELECTRÓNICO");
-        Utilidades.actualizar(txt_user, label_user, "USUARIO");
-        Utilidades.actualizar(txt_pass, label_pass, "CONTRASEÑA");
+        Utilidades.actualizarLabel(txt_name, label_name, "NOMBRE");
+        Utilidades.actualizarLabel(txt_last_name, label_last_name, "APELLIDO");
+        Utilidades.actualizarLabel(txt_phone, label_phone, "TELÉFONO");
+        Utilidades.actualizarLabel(txt_mail, label_mail, "CORREO ELECTRÓNICO");
+        Utilidades.actualizarLabel(txt_user, label_user, "USUARIO");
+        Utilidades.actualizarLabel(txt_pass, label_pass, "CONTRASEÑA");
+        
+        //ACTUALIZACIÓN DE COLOR DE FUENTE DE CAMPO USER SI ESTE ESTÁ DISPONIBLE O NO
+        Utilidades.verificarUsuario(txt_user);
     }
 
     //PONEMOS UN ICONO PERSONALIZADO A NUESTRO JFRAME
@@ -293,22 +296,9 @@ public class AddUser extends javax.swing.JFrame {
         }
         
         
-        //VERIFICAMOS QUE EL USUARIO ESTÉ DISPONIBLE, SI YA ESTÁ OCUPADO DEBE DE HACERCELO SABER AL USUARIO
-        try {
-            Connection cn = Conexion.connect();
-            PreparedStatement pst = cn.prepareStatement("select username from users where username = '" + txt_user.getText().trim() + "'");
-            
-            ResultSet rs = pst.executeQuery();
-            
-            if(rs.next()){
-                txt_user.setForeground(Color.red);
-                JOptionPane.showMessageDialog(null, "Nombre de usuario ocupado, utilice otro");
-                cn.close();
-            } else {}
-            
-        } catch (SQLException e) {
-            System.err.println("Error en validar nombre de usuario + " + e);
-            JOptionPane.showMessageDialog(null, "Error al verificar usuario, contacte a su administrador.");
+        //SI EL USUARIO INGRESADO NO ESTÁ DISPONIBLE(VERIFICADO CON EL MÉTODO verificarUsuario DE LA CLASE Utilidades) SE LO HACEMOS SABER AL USUARIO PARA QUE LO CAMBIE
+        if(txt_user.getForeground().equals(Color.red)){
+            JOptionPane.showMessageDialog(null, "Usuario no disponible, elija otro");
         }
     }//GEN-LAST:event_boton_saveActionPerformed
 

@@ -47,12 +47,12 @@ public class Login extends javax.swing.JFrame {
         this.repaint();
         
         //ACTUALIZACIÓN DE LABEL "USUARIO" Y "CONTRASEÑA" SI SE ESCRIBE ALGO EN LOS CAMPOS TXT_CON Y TXT_USER
-        Utilidades.actualizar(txt_user, label_us, "USUARIO");
-        Utilidades.actualizar(txt_pass, label_con, "CONTRASEÑA");
+        Utilidades.actualizarLabel(txt_user, label_us, "USUARIO");
+        Utilidades.actualizarLabel(txt_pass, label_con, "CONTRASEÑA");
 
     }
 
-    //PONEMOS UN ICONO PERSONALIZADO A NUESTRO JFRAME
+    //PONEMOS UN ICONO PERSONALIZADO A NSUESTRO JFRAME
     @Override
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
