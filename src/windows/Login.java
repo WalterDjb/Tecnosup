@@ -35,15 +35,14 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
 
         //ICONO DE LA PANTALLA PRINCIPAL
-        ImageIcon img_ic = new ImageIcon("src/images/main_icon.png");
-        Icon icon_ic = new ImageIcon(img_ic.getImage().getScaledInstance(label_main_icon.getWidth(), label_main_icon.getHeight(), Image.SCALE_DEFAULT));
-        label_main_icon.setIcon(icon_ic);
+        Utilidades.colocarImagen("src/images/main_icon.png", label_main_icon);
         this.repaint();
 
         //ICONO DE LOG
         ImageIcon img_log = new ImageIcon("src/images/log.png");
         Icon icon_log = new ImageIcon(img_log.getImage().getScaledInstance(label_log.getWidth(), label_log.getHeight(), Image.SCALE_DEFAULT));
         label_log.setIcon(icon_log);
+        Utilidades.colocarImagen("src/images/log.png", label_log);
         this.repaint();
         
         //ACTUALIZACIÓN DE LABEL "USUARIO" Y "CONTRASEÑA" SI SE ESCRIBE ALGO EN LOS CAMPOS TXT_CON Y TXT_USER

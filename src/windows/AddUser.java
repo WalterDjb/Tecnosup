@@ -34,10 +34,8 @@ public class AddUser extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        //AGREGO AQUÍ LOS CAMPOS PARA COMPLETAR EN MODO IMAGEN PNG
-        ImageIcon img_fields = new ImageIcon("src/images/add_user_field.png");
-        Icon icon_fields = new ImageIcon(img_fields.getImage().getScaledInstance(label_fields.getWidth(), label_fields.getHeight(), Image.SCALE_DEFAULT));
-        label_fields.setIcon(icon_fields);
+        //AGREGO AQUÍ LAS LÍNEAS DE LOS CAMPOS
+        Utilidades.colocarImagen("src/images/add_user_field.png", label_fields);
         this.repaint();
 
         //ACTUALIZACIÓN DE LABELS CUANDO SE ESCRIBE ALGO EN LOS CAMPOS Y CUANDO SE DEJA EN BLANCO LOS MISMOS
@@ -47,7 +45,7 @@ public class AddUser extends javax.swing.JFrame {
         Utilidades.actualizarLabel(txt_mail, label_mail, "CORREO ELECTRÓNICO");
         Utilidades.actualizarLabel(txt_user, label_user, "USUARIO");
         Utilidades.actualizarLabel(txt_pass, label_pass, "CONTRASEÑA");
-        
+
         //ACTUALIZACIÓN DE COLOR DE FUENTE DE CAMPO USER SI ESTE ESTÁ DISPONIBLE O NO
         Utilidades.verificarUsuario(txt_user);
     }
@@ -69,6 +67,7 @@ public class AddUser extends javax.swing.JFrame {
     private void initComponents() {
 
         label_name = new javax.swing.JLabel();
+        label_name_ver = new javax.swing.JLabel();
         txt_name = new javax.swing.JTextField();
         label_last_name = new javax.swing.JLabel();
         txt_last_name = new javax.swing.JTextField();
@@ -80,7 +79,7 @@ public class AddUser extends javax.swing.JFrame {
         txt_user = new javax.swing.JTextField();
         label_pass = new javax.swing.JLabel();
         txt_pass = new javax.swing.JTextField();
-        label_user1 = new javax.swing.JLabel();
+        label_rango = new javax.swing.JLabel();
         label_ref = new javax.swing.JLabel();
         boton_atras = new javax.swing.JButton();
         boton_save = new javax.swing.JButton();
@@ -96,6 +95,9 @@ public class AddUser extends javax.swing.JFrame {
         label_name.setForeground(new java.awt.Color(204, 204, 204));
         label_name.setText("NOMBRE");
         getContentPane().add(label_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 98, -1, -1));
+
+        label_name_ver.setForeground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(label_name_ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 95, 20, 20));
 
         txt_name.setBackground(new java.awt.Color(20, 34, 34));
         txt_name.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -183,9 +185,9 @@ public class AddUser extends javax.swing.JFrame {
         });
         getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 234, 268, 30));
 
-        label_user1.setForeground(new java.awt.Color(204, 204, 204));
-        label_user1.setText("RANGO:");
-        getContentPane().add(label_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 340, -1, -1));
+        label_rango.setForeground(new java.awt.Color(204, 204, 204));
+        label_rango.setText("RANGO:");
+        getContentPane().add(label_rango, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 340, -1, -1));
 
         label_ref.setForeground(new java.awt.Color(204, 204, 204));
         label_ref.setText("Software creado por Walter Eduardo Benítez ©");
@@ -270,7 +272,7 @@ public class AddUser extends javax.swing.JFrame {
 
     private void boton_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_saveActionPerformed
         int i = 0;
-        
+
         //VERIFICAMOS SI ALGUN CAMPO ESTÁ VACÍO, SI ES ASÍ CAMBIAMOS EL COLOR DEL LABEL CORRESPONDIENTE
         if (txt_name.getText().trim().equals("")) {
             label_name.setForeground(Color.red);
@@ -291,24 +293,23 @@ public class AddUser extends javax.swing.JFrame {
             label_mail.setForeground(Color.red);
             i++;
         }
-        
+
         if (txt_user.getText().trim().equals("")) {
             label_user.setForeground(Color.red);
             i++;
         }
-        
+
         if (txt_pass.getText().trim().equals("")) {
             label_pass.setForeground(Color.red);
             i++;
         }
-        
-        
+
         //SI EL USUARIO INGRESADO NO ESTÁ DISPONIBLE(VERIFICADO CON EL MÉTODO verificarUsuario DE LA CLASE Utilidades) SE LO HACEMOS SABER AL USUARIO PARA QUE LO CAMBIE
-        if(txt_user.getForeground().equals(Color.red)){
+        if (txt_user.getForeground().equals(Color.red)) {
             JOptionPane.showMessageDialog(null, "Usuario no disponible, elija otro");
         }
-        
-        if(i == 0){
+
+        if (i == 0) {
         } else {
             JOptionPane.showMessageDialog(null, "Debe completar todos los campos");
         }
@@ -359,11 +360,12 @@ public class AddUser extends javax.swing.JFrame {
     private javax.swing.JLabel label_last_name;
     private javax.swing.JLabel label_mail;
     private javax.swing.JLabel label_name;
+    private javax.swing.JLabel label_name_ver;
     private javax.swing.JLabel label_pass;
     private javax.swing.JLabel label_phone;
+    private javax.swing.JLabel label_rango;
     private javax.swing.JLabel label_ref;
     private javax.swing.JLabel label_user;
-    private javax.swing.JLabel label_user1;
     private javax.swing.JTextField txt_last_name;
     private javax.swing.JTextField txt_mail;
     private javax.swing.JTextField txt_name;

@@ -6,10 +6,14 @@
 package classes;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
@@ -20,6 +24,12 @@ import javax.swing.event.DocumentListener;
  * @author Walter Benítez
  */
 public class Utilidades {
+
+    public static void colocarImagen(String ruta, JLabel label) {
+        ImageIcon img = new ImageIcon(ruta);
+        Icon icon = new ImageIcon(img.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+        label.setIcon(icon);
+    }
 
     public static void actualizarLabel(JTextField campo, JLabel etiqueta, String texto) {
         campo.getDocument().addDocumentListener(new DocumentListener() {

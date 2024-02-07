@@ -86,7 +86,7 @@ public class Tecnico extends javax.swing.JFrame {
         label_name_user.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         label_name_user.setForeground(new java.awt.Color(255, 255, 255));
         label_name_user.setText("Bienvenido Walter Eduardo Benítez");
-        getContentPane().add(label_name_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        getContentPane().add(label_name_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         boton_registrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user.png"))); // NOI18N
         boton_registrar.setBorderPainted(false);
