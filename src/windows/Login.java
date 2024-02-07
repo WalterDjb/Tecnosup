@@ -39,9 +39,6 @@ public class Login extends javax.swing.JFrame {
         this.repaint();
 
         //ICONO DE LOG
-        ImageIcon img_log = new ImageIcon("src/images/log.png");
-        Icon icon_log = new ImageIcon(img_log.getImage().getScaledInstance(label_log.getWidth(), label_log.getHeight(), Image.SCALE_DEFAULT));
-        label_log.setIcon(icon_log);
         Utilidades.colocarImagen("src/images/log.png", label_log);
         this.repaint();
         

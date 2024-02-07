@@ -7,11 +7,11 @@ package classes;
 
 import java.awt.Color;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -61,7 +61,7 @@ public class Utilidades {
         });
     }
 
-    public static void verificarUsuario(JTextField campo) {
+    public static void verificarUsuario(JTextField campo, JLabel label) {
         campo.getDocument().addDocumentListener(new DocumentListener() {
 
             @Override
@@ -87,10 +87,9 @@ public class Utilidades {
                     ResultSet rs = pst.executeQuery();
 
                     if (rs.next()) {
-                        campo.setForeground(Color.red);
+                        colocarImagen("src/images/wrong_20x20.png", label);
                         cn.close();
                     } else {
-                        campo.setForeground(Color.white);
                         cn.close();
                     }
 
@@ -100,5 +99,62 @@ public class Utilidades {
                 }
             }
         });
+    }
+
+    public static void verificarCampo(JTextField campo, JLabel label, int min, int max, boolean mail) {
+        campo.getDocument().addDocumentListener(new DocumentListener() {
+
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                cambiar();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                cambiar();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                cambiar();
+            }
+
+            public void cambiar() {
+                if (!campo.getText().trim().equals("")) {
+                    if (!mail) {
+                        if (campo.getText().trim().length() < min || campo.getText().trim().length() > max) {
+                            colocarImagen("src/images/wrong_20x20.png", label);
+                        } else {
+                            colocarImagen("src/images/ok_20x20.png", label);
+                        }
+                    } else {
+                        if (isMailCorrect(campo)) {
+                            colocarImagen("src/images/ok_20x20.png", label);
+                        } else {
+                            colocarImagen("src/images/wrong_20x20.png", label);
+                        }
+                    }
+                } else {
+                    colocarImagen("", label);
+                }
+            }
+        });
+    }
+
+    private static boolean isMailCorrect(JTextField campo) {
+        String regex = "^(([^<>()[\\]\\.,;:\\s@\"]+(\\.[^<>()[\\]\\.,;:\\s@\"]+)*)|(\\\".+\\\"))@(([^<>()[\\]\\.,;:\\s@\"]+\\.)+[^<>()[\\]\\.,;:\\s@\"]{2,})\\\\z";
+
+
+        Pattern pattern = Pattern.compile(regex);
+
+        return pattern.matcher(campo.getText().trim()).matches();
+    }
+
+    private static void esperar(int mseg) {
+        try {
+            Thread.sleep(mseg);
+        } catch (InterruptedException e) {
+            e.printStackTrace ();
+        }
     }
 }
