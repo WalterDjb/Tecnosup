@@ -16,15 +16,14 @@ import javax.swing.WindowConstants;
  * @author Walter Benítez
  */
 public class Admin extends javax.swing.JFrame {
+
     private String name;
     private int sesion;
-    
+
     /**
      * Creates new form Admin
      */
     public Admin() {
-        sesion = 1;
-        
         initComponents();
         getContentPane().setBackground(new java.awt.Color(20, 34, 34));
         setSize(650, 430);
@@ -32,16 +31,15 @@ public class Admin extends javax.swing.JFrame {
         setTitle("Tecnosup - Administrador");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        
-        
+
         //RECUPERAR EL NOMBRE DEL USUARIO QUE INICIA SESIÓN PARA MOSTRARLO EN PANTALLA
         try {
             Connection cn = Conexion.connect();
             PreparedStatement pst = cn.prepareStatement("select name from users where username = '" + Login.user + "'");
-            
+
             ResultSet rs = pst.executeQuery();
-            
-            if(rs.next()){
+
+            if (rs.next()) {
                 name = rs.getString("name");
                 label_name_user.setText(name);
             }
@@ -49,9 +47,10 @@ public class Admin extends javax.swing.JFrame {
             System.err.println("Error en conexión desde Admin.java " + e);
         }
     }
-    
+
+    //PONEMOS UN ICONO PERSONALIZADO A NUESTRO JFRAME
     @Override
-    public Image getIconImage(){
+    public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
         return retValue;
     }

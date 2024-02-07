@@ -47,6 +47,7 @@ public class AddUser extends javax.swing.JFrame {
         Utilidades.actualizar(txt_pass, label_pass, "CONTRASEÑA");
     }
 
+    //PONEMOS UN ICONO PERSONALIZADO A NUESTRO JFRAME
     @Override
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
@@ -201,10 +202,15 @@ public class AddUser extends javax.swing.JFrame {
         boton_save.setContentAreaFilled(false);
         boton_save.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save_press.png"))); // NOI18N
         boton_save.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save_select.png"))); // NOI18N
+        boton_save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_saveActionPerformed(evt);
+            }
+        });
         getContentPane().add(boton_save, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 303, 90, 90));
 
         combo_rol.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "RECEPCIONISTA", "TÉCNICO" }));
+        combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "RECEPTOR", "TÉCNICO" }));
         getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 327, 210, 40));
 
         boton_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
@@ -256,6 +262,10 @@ public class AddUser extends javax.swing.JFrame {
         new Admin().setVisible(true);
         dispose();
     }//GEN-LAST:event_boton_atrasActionPerformed
+
+    private void boton_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_saveActionPerformed
+        
+    }//GEN-LAST:event_boton_saveActionPerformed
 
     /**
      * @param args the command line arguments

@@ -52,6 +52,7 @@ public class Login extends javax.swing.JFrame {
 
     }
 
+    //PONEMOS UN ICONO PERSONALIZADO A NUESTRO JFRAME
     @Override
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
