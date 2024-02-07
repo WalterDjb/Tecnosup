@@ -7,6 +7,7 @@ package windows;
 
 import classes.Utilidades;
 import classes.Conexion;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.Icon;
@@ -37,7 +38,7 @@ public class AddUser extends javax.swing.JFrame {
         Icon icon_fields = new ImageIcon(img_fields.getImage().getScaledInstance(label_fields.getWidth(), label_fields.getHeight(), Image.SCALE_DEFAULT));
         label_fields.setIcon(icon_fields);
         this.repaint();
-        
+
         //ACTUALIZACIÓN DE LABELS CUANDO SE ESCRIBE ALGO EN LOS CAMPOS Y CUANDO SE DEJA EN BLANCO LOS MISMOS
         Utilidades.actualizar(txt_name, label_name, "NOMBRE");
         Utilidades.actualizar(txt_last_name, label_last_name, "APELLIDO");
@@ -264,7 +265,29 @@ public class AddUser extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_atrasActionPerformed
 
     private void boton_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_saveActionPerformed
+        if (txt_name.getText().trim().equals("")) {
+            label_name.setForeground(Color.red);
+        }
+
+        if (txt_last_name.getText().trim().equals("")) {
+            label_last_name.setForeground(Color.red);
+        }
+
+        if (txt_phone.getText().trim().equals("")) {
+            label_phone.setForeground(Color.red);
+        }
+
+        if (txt_mail.getText().trim().equals("")) {
+            label_mail.setForeground(Color.red);
+        }
         
+        if (txt_user.getText().trim().equals("")) {
+            label_user.setForeground(Color.red);
+        }
+        
+        if (txt_pass.getText().trim().equals("")) {
+            label_pass.setForeground(Color.red);
+        }
     }//GEN-LAST:event_boton_saveActionPerformed
 
     /**
