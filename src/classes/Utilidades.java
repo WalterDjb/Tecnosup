@@ -14,10 +14,14 @@ import java.sql.SQLException;
 import javax.mail.internet.InternetAddress;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.event.PopupMenuEvent;
+import javax.swing.event.PopupMenuListener;
 
 /**
  *
@@ -158,5 +162,26 @@ public class Utilidades {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void actualizarIconBotonComboBox(JComboBox combo) {
+        //JButton button = (JButton) combo.getUI().getAccessibleChild(combo, 0);
+        
+        combo.addPopupMenuListener(new PopupMenuListener() {
+            @Override
+            public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
+                //button.setIcon(new ImageIcon("src/images/desp_true.png"));
+            }
+
+            @Override
+            public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
+                //button.setIcon(new ImageIcon("src/images/desp.png"));
+            }
+
+            @Override
+            public void popupMenuCanceled(PopupMenuEvent e) {
+                //button.setIcon(new ImageIcon("src/images/desp.png"));
+            }
+        });
     }
 }

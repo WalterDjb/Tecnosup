@@ -6,13 +6,12 @@
 package windows;
 
 import classes.Utilidades;
-import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.WindowConstants;
 import java.sql.*;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import classes.CustomComboBoxUI;
 
 /**
  *
@@ -25,6 +24,8 @@ public class AddUser extends javax.swing.JFrame {
      */
     public AddUser() {
         initComponents();
+        combo_rol.setUI(new CustomComboBoxUI());
+        Utilidades.actualizarIconBotonComboBox(combo_rol);
         getContentPane().setBackground(new java.awt.Color(20, 34, 34));
         setSize(650, 430);
         setResizable(false);
@@ -44,16 +45,16 @@ public class AddUser extends javax.swing.JFrame {
         Utilidades.actualizarLabel(txt_user, label_user, "USUARIO");
         Utilidades.actualizarLabel(txt_pass, label_pass, "CONTRASEÑA");
 
-        //ACTUALIZACIÓN DE COLOR DE FUENTE DE CAMPO USER SI ESTE ESTÁ DISPONIBLE O NO
+        //ACTUALIZACIÓN DE ICONO DE VALIDACION SI EL USUARIO YA SE ENCUENTRA EN LA BASE DE DATOS
         Utilidades.verificarUsuario(txt_user, label_user_ver);
         
-        //CAMBIO DE ICONO VERIFICADOR
+        //CAMBIO DE ICONO VALIDACIÓN PARA TODOS LOS CAMPOS
         Utilidades.verificarCampo(txt_name, label_name_ver, 3, 20, false);
         Utilidades.verificarCampo(txt_last_name, label_last_name_ver, 3, 20, false);
         Utilidades.verificarCampo(txt_phone, label_phone_ver, 10, 13, false);
-        Utilidades.verificarCampo(txt_mail, label_mail_ver, 6, 25, true);
-        Utilidades.verificarCampo(txt_user, label_user_ver, 4, 15, false);
-        Utilidades.verificarCampo(txt_pass, label_pass_ver, 5, 20, false);
+        Utilidades.verificarCampo(txt_mail, label_mail_ver, 6, 30, true);
+        Utilidades.verificarCampo(txt_user, label_user_ver, 3, 20, false);
+        Utilidades.verificarCampo(txt_pass, label_pass_ver, 4, 20, false);
     }
 
     //PONEMOS UN ICONO PERSONALIZADO A NUESTRO JFRAME
@@ -212,7 +213,7 @@ public class AddUser extends javax.swing.JFrame {
         getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 237, 247, 30));
 
         label_rango.setForeground(new java.awt.Color(204, 204, 204));
-        label_rango.setText("RANGO:");
+        label_rango.setText("RANGO DEL USUARIO:");
         getContentPane().add(label_rango, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 340, -1, -1));
 
         label_ref.setForeground(new java.awt.Color(204, 204, 204));
@@ -244,7 +245,7 @@ public class AddUser extends javax.swing.JFrame {
 
         combo_rol.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "RECEPTOR", "TÉCNICO" }));
-        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 327, 210, 40));
+        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 333, 131, 30));
 
         boton_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         boton_exit.setBorder(null);
