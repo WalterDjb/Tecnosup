@@ -297,29 +297,41 @@ public class AddUser extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_atrasActionPerformed
 
     private void boton_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_saveActionPerformed
+        int i = 0;
+        
         if(txt_name.getText().trim().equals("")){
             if(txt_name.getText().trim().equals("")){
                 Utilidades.colocarImagen("src/images/warn_20x20.png", label_name_ver);
+                i++;
             }
             
             if(txt_last_name.getText().trim().equals("")){
                 Utilidades.colocarImagen("src/images/warn_20x20.png", label_last_name_ver);
+                i++;
             }
             
             if(txt_phone.getText().trim().equals("")){
                 Utilidades.colocarImagen("src/images/warn_20x20.png", label_phone_ver);
+                i++;
             }
             
             if(txt_mail.getText().trim().equals("")){
                 Utilidades.colocarImagen("src/images/warn_20x20.png", label_mail_ver);
+                i++;
             }
             
             if(txt_user.getText().trim().equals("")){
                 Utilidades.colocarImagen("src/images/warn_20x20.png", label_user_ver);
+                i++;
             }
             
             if(txt_pass.getText().trim().equals("")){
                 Utilidades.colocarImagen("src/images/warn_20x20.png", label_pass_ver);
+                i++;
+            }
+            
+            if(i > 0){
+                JOptionPane.showMessageDialog(null, "Debe completar todos los campos");
             }
         }
     }//GEN-LAST:event_boton_saveActionPerformed
