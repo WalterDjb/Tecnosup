@@ -11,7 +11,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.regex.Pattern;
 import javax.mail.internet.InternetAddress;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
