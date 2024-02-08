@@ -119,7 +119,7 @@ public class AddUser extends javax.swing.JFrame {
                 txt_nameActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 90, 248, 30));
+        getContentPane().add(txt_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 92, 248, 30));
 
         label_last_name.setForeground(new java.awt.Color(204, 204, 204));
         label_last_name.setText("APELLIDO");
@@ -137,7 +137,7 @@ public class AddUser extends javax.swing.JFrame {
                 txt_last_nameActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_last_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 90, 268, 30));
+        getContentPane().add(txt_last_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 92, 268, 30));
 
         label_phone.setForeground(new java.awt.Color(204, 204, 204));
         label_phone.setText("TELÉFONO");
@@ -155,7 +155,7 @@ public class AddUser extends javax.swing.JFrame {
                 txt_phoneActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 163, 268, 30));
+        getContentPane().add(txt_phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 165, 268, 30));
 
         label_mail.setForeground(new java.awt.Color(204, 204, 204));
         label_mail.setText("CORREO ELECTRÓNICO");
@@ -173,7 +173,7 @@ public class AddUser extends javax.swing.JFrame {
                 txt_mailActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 163, 268, 30));
+        getContentPane().add(txt_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 165, 268, 30));
 
         label_user.setForeground(new java.awt.Color(204, 204, 204));
         label_user.setText("USUARIO");
@@ -191,7 +191,7 @@ public class AddUser extends javax.swing.JFrame {
                 txt_userActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 235, 268, 30));
+        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 237, 268, 30));
 
         label_pass.setForeground(new java.awt.Color(204, 204, 204));
         label_pass.setText("CONTRASEÑA");
@@ -209,7 +209,7 @@ public class AddUser extends javax.swing.JFrame {
                 txt_passActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 235, 268, 30));
+        getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 237, 268, 30));
 
         label_rango.setForeground(new java.awt.Color(204, 204, 204));
         label_rango.setText("RANGO:");
