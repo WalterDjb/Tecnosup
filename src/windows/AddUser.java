@@ -299,6 +299,7 @@ public class AddUser extends javax.swing.JFrame {
     private void boton_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_saveActionPerformed
         int i = 0;
         
+        //ACTUALIZACIÓN DE ICONO DE VALIDACION DE CAMPO DE TEXTO
         if(txt_name.getText().trim().equals("")){
             if(txt_name.getText().trim().equals("")){
                 Utilidades.colocarImagen("src/images/warn_20x20.png", label_name_ver);
@@ -330,7 +331,11 @@ public class AddUser extends javax.swing.JFrame {
                 i++;
             }
             
-            if(i > 0){
+            
+            //VERIFICACIÓN DE DATOS VÁLIDOS POR CADA CAMPO Y AVISO AL USUARIO DE ACUERDO AL ERROR
+            if(i == 0){
+                
+            } else {
                 JOptionPane.showMessageDialog(null, "Debe completar todos los campos");
             }
         }
