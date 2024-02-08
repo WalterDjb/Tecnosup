@@ -112,7 +112,7 @@ public class Login extends javax.swing.JFrame {
 
         label_con.setForeground(new java.awt.Color(204, 204, 204));
         label_con.setText("CONTRASEÑA");
-        getContentPane().add(label_con, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
+        getContentPane().add(label_con, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 383, -1, -1));
 
         txt_user.setBackground(new java.awt.Color(20, 34, 34));
         txt_user.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N

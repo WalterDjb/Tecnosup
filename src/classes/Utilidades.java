@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.regex.Pattern;
+import javax.mail.internet.InternetAddress;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -128,7 +129,7 @@ public class Utilidades {
                             colocarImagen("src/images/ok_20x20.png", label);
                         }
                     } else {
-                        if (isMailCorrect(campo)) {
+                        if (isValidMail(campo)) {
                             colocarImagen("src/images/ok_20x20.png", label);
                         } else {
                             colocarImagen("src/images/wrong_20x20.png", label);
@@ -141,20 +142,22 @@ public class Utilidades {
         });
     }
 
-    private static boolean isMailCorrect(JTextField campo) {
-        String regex = "^(([^<>()[\\]\\.,;:\\s@\"]+(\\.[^<>()[\\]\\.,;:\\s@\"]+)*)|(\\\".+\\\"))@(([^<>()[\\]\\.,;:\\s@\"]+\\.)+[^<>()[\\]\\.,;:\\s@\"]{2,})\\\\z";
+    private static boolean isValidMail(JTextField campo) {
+        try {
+            InternetAddress internetAddress = new InternetAddress(campo.getText().trim());
+            internetAddress.validate();
 
-
-        Pattern pattern = Pattern.compile(regex);
-
-        return pattern.matcher(campo.getText().trim()).matches();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     private static void esperar(int mseg) {
         try {
             Thread.sleep(mseg);
         } catch (InterruptedException e) {
-            e.printStackTrace ();
+            e.printStackTrace();
         }
     }
 }

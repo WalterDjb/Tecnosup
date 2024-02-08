@@ -51,7 +51,7 @@ public class AddUser extends javax.swing.JFrame {
         Utilidades.verificarCampo(txt_name, label_name_ver, 3, 20, false);
         Utilidades.verificarCampo(txt_last_name, label_last_name_ver, 3, 20, false);
         Utilidades.verificarCampo(txt_phone, label_phone_ver, 10, 13, false);
-        //Utilidades.verificarCampo(txt_mail, label_mail_ver, 6, 25, true);
+        Utilidades.verificarCampo(txt_mail, label_mail_ver, 6, 25, true);
         Utilidades.verificarCampo(txt_user, label_user_ver, 4, 15, false);
         Utilidades.verificarCampo(txt_pass, label_pass_ver, 5, 20, false);
     }
@@ -119,7 +119,7 @@ public class AddUser extends javax.swing.JFrame {
                 txt_nameActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 90, 268, 30));
+        getContentPane().add(txt_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 90, 248, 30));
 
         label_last_name.setForeground(new java.awt.Color(204, 204, 204));
         label_last_name.setText("APELLIDO");
