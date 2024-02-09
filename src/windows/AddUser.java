@@ -215,7 +215,7 @@ public class AddUser extends javax.swing.JFrame {
         getContentPane().add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 237, 247, 30));
 
         label_rango.setForeground(new java.awt.Color(204, 204, 204));
-        label_rango.setText("RANGO DEL USUARIO:");
+        label_rango.setText("RANGO USUARIO:");
         getContentPane().add(label_rango, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 340, -1, -1));
 
         label_ref.setForeground(new java.awt.Color(204, 204, 204));
@@ -247,7 +247,7 @@ public class AddUser extends javax.swing.JFrame {
 
         combo_rol.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "RECEPTOR", "TÉCNICO" }));
-        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 333, 131, 30));
+        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 333, 150, 30));
 
         boton_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         boton_exit.setBorder(null);

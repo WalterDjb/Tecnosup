@@ -101,7 +101,6 @@ public class Utilidades {
 
                 } catch (SQLException e) {
                     System.err.println("Error en validar nombre de usuario en Utilidades.java + " + e);
-                    //JOptionPane.showMessageDialog(null, "Error al verificar usuario, contacte a su administrador.");
                 }
             }
         });
@@ -158,16 +157,7 @@ public class Utilidades {
         }
     }
 
-    private static void esperar(int mseg) {
-        try {
-            Thread.sleep(mseg);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void actualizarIconBotonComboBox(JComboBox combo) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
-        //JButton button = (JButton) combo.getUI().getAccessibleChild(combo, 0);
+    public static void actualizarIconBotonComboBox(JComboBox combo) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException { 
         BasicComboBoxUI ui = (BasicComboBoxUI) combo.getUI();
         Field arrowButtonField = BasicComboBoxUI.class.getDeclaredField("arrowButton");
         arrowButtonField.setAccessible(true);
