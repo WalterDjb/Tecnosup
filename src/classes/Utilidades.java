@@ -157,12 +157,12 @@ public class Utilidades {
         }
     }
 
-    public static void actualizarIconBotonComboBox(JComboBox combo) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException { 
+    public static void actualizarIconBotonComboBox(JComboBox combo) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
         BasicComboBoxUI ui = (BasicComboBoxUI) combo.getUI();
         Field arrowButtonField = BasicComboBoxUI.class.getDeclaredField("arrowButton");
         arrowButtonField.setAccessible(true);
         JButton button = (JButton) arrowButtonField.get(ui);
-        
+
         combo.addPopupMenuListener(new PopupMenuListener() {
             @Override
             public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
