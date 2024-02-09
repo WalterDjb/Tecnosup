@@ -397,6 +397,7 @@ public class AddUser extends javax.swing.JFrame {
                             txt_mail.setText("");
                             txt_user.setText("");
                             txt_pass.setText("");
+                            combo_rol.setSelectedIndex(0);
                             
                         } catch (SQLException e) {
                             System.err.println("Error en registrar usuario " + e);
