@@ -9,6 +9,8 @@ import java.sql.*;
 import classes.Conexion;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.WindowConstants;
 
 /**
@@ -153,8 +155,12 @@ public class Tecnico extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_exitActionPerformed
 
     private void boton_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_registrarActionPerformed
-        new AddUser().setVisible(true);
-        dispose();
+        try {
+            new AddUser().setVisible(true);
+            dispose();
+        } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException ex) {
+            Logger.getLogger(Tecnico.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_boton_registrarActionPerformed
 
     /**

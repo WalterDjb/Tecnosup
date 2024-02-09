@@ -9,6 +9,8 @@ import java.sql.*;
 import classes.Conexion;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.WindowConstants;
 
 /**
@@ -153,7 +155,15 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_exitActionPerformed
 
     private void boton_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_registrarActionPerformed
-        new AddUser().setVisible(true);
+        try {
+            new AddUser().setVisible(true);
+        } catch (NoSuchFieldException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalArgumentException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
         dispose();
     }//GEN-LAST:event_boton_registrarActionPerformed
 
