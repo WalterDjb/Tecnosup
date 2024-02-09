@@ -247,7 +247,7 @@ public class AddUser extends javax.swing.JFrame {
 
         combo_rol.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "RECEPTOR", "TÉCNICO" }));
-        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 333, 150, 30));
+        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 333, 160, 30));
 
         boton_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         boton_exit.setBorder(null);
