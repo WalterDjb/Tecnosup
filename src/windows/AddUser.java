@@ -5,6 +5,7 @@
  */
 package windows;
 
+import classes.Conexion;
 import classes.Utilidades;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -55,7 +56,7 @@ public class AddUser extends javax.swing.JFrame {
         Utilidades.verificarCampo(txt_last_name, label_last_name_ver, 3, 20, false);
         Utilidades.verificarCampo(txt_phone, label_phone_ver, 10, 13, false);
         Utilidades.verificarCampo(txt_mail, label_mail_ver, 6, 30, true);
-        Utilidades.verificarCampo(txt_user, label_user_ver, 3, 20, false);
+        Utilidades.verificarCampo(txt_user, label_user_ver, 4, 20, false);
         Utilidades.verificarCampo(txt_pass, label_pass_ver, 4, 20, false);
     }
 
@@ -335,7 +336,39 @@ public class AddUser extends javax.swing.JFrame {
 
         //VERIFICACIÓN DE DATOS VÁLIDOS POR CADA CAMPO Y AVISO AL USUARIO DE ACUERDO AL ERROR
         if (i == 0) {
-
+            if(txt_name.getText().trim().length() < 3 || txt_name.getText().trim().length() > 20){
+                JOptionPane.showMessageDialog(null, "El nombre debe de tener entre 3 a 20 carácteres");
+            } else if(txt_last_name.getText().trim().length() < 3 || txt_last_name.getText().trim().length() > 20){
+                JOptionPane.showMessageDialog(null, "El apellido debe tener entre 3 a 20 carácteres");
+            } else if(txt_phone.getText().trim().length() < 10 || txt_phone.getText().trim().length() > 13){
+                JOptionPane.showMessageDialog(null, "El número de teléfono debe tener entre 10 a 13 números");
+            } else if(!Utilidades.isValidMail(txt_mail)){
+                JOptionPane.showMessageDialog(null, "Verifique su correo electrónico y vuelva a intentar");
+            } else if(txt_user.getText().trim().length() < 4 || txt_user.getText().trim().length() > 20){
+                JOptionPane.showMessageDialog(null, "El usuario debe de tener entre 4 a 20 carácteres");
+            } else if(txt_pass.getText().trim().length() < 4 || txt_pass.getText().trim().length() > 20){
+                JOptionPane.showMessageDialog(null, "La contraseña debe de tener entre 4 a 20 carácteres");
+            } else{
+                try {
+                    Connection cn = Conexion.connect();
+                    PreparedStatement pst = cn.prepareStatement("select username from users where username = '" + txt_user.getText().trim() + "'");
+                    
+                    ResultSet rs = pst.executeQuery();
+                    
+                    if(rs.next()){
+                        JOptionPane.showMessageDialog(null, "El usuario está ocupado, cámbielo y vuelva a intentarlo");
+                        cn.close();
+                    } else {
+                        try {
+                            
+                            
+                        } catch (Exception e) {
+                        }
+                    }
+                    
+                } catch (Exception e) {
+                }
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Debe completar todos los campos");
             i = 0;

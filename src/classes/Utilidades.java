@@ -146,7 +146,7 @@ public class Utilidades {
         });
     }
 
-    private static boolean isValidMail(JTextField campo) {
+    public static boolean isValidMail(JTextField campo) {
         try {
             InternetAddress internetAddress = new InternetAddress(campo.getText().trim());
             internetAddress.validate();
