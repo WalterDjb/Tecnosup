@@ -309,27 +309,27 @@ public class AddUser extends javax.swing.JFrame {
             Utilidades.colocarImagen("src/images/warn_20x20.png", label_name_ver);
             i++;
         }
-
+        
         if (txt_last_name.getText().trim().equals("")) {
             Utilidades.colocarImagen("src/images/warn_20x20.png", label_last_name_ver);
             i++;
         }
-
+        
         if (txt_phone.getText().trim().equals("")) {
             Utilidades.colocarImagen("src/images/warn_20x20.png", label_phone_ver);
             i++;
         }
-
+        
         if (txt_mail.getText().trim().equals("")) {
             Utilidades.colocarImagen("src/images/warn_20x20.png", label_mail_ver);
             i++;
         }
-
+        
         if (txt_user.getText().trim().equals("")) {
             Utilidades.colocarImagen("src/images/warn_20x20.png", label_user_ver);
             i++;
         }
-
+        
         if (txt_pass.getText().trim().equals("")) {
             Utilidades.colocarImagen("src/images/warn_20x20.png", label_pass_ver);
             i++;
@@ -353,18 +353,17 @@ public class AddUser extends javax.swing.JFrame {
                 try {
                     Connection cn = Conexion.connect();
                     PreparedStatement pst = cn.prepareStatement("select username from users where username = '" + txt_user.getText().trim() + "'");
-
+                    
                     ResultSet rs = pst.executeQuery();
-
+                    
                     if (rs.next()) {
                         JOptionPane.showMessageDialog(null, "El usuario está ocupado, cámbielo y vuelva a intentarlo");
                         cn.close();
                     } else {
-                        cn.close();
 
                         try {
                             pst = cn.prepareStatement("insert into users values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
+                            
                             pst.setInt(1, 0);
                             pst.setString(2, txt_name.getText().trim());
                             pst.setString(3, txt_last_name.getText().trim());
@@ -372,7 +371,7 @@ public class AddUser extends javax.swing.JFrame {
                             pst.setString(5, txt_mail.getText().trim());
                             pst.setString(6, txt_user.getText().trim());
                             pst.setString(7, txt_pass.getText().trim());
-
+                            
                             switch (combo_rol.getSelectedIndex()) {
                                 case 0:
                                     pst.setString(8, "ADM");
@@ -383,13 +382,13 @@ public class AddUser extends javax.swing.JFrame {
                                 case 2:
                                     pst.setString(8, "TEC");
                             }
-
+                            
                             pst.setString(9, "active");
                             pst.setString(10, Login.user);
-
+                            
                             pst.executeUpdate();
                             cn.close();
-
+                            
                             JOptionPane.showMessageDialog(null, "Usuario guardado");
                             
                             txt_name.setText("");
@@ -404,7 +403,7 @@ public class AddUser extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "Error al guardar usuario, contacte a su administrador");
                         }
                     }
-
+                    
                 } catch (HeadlessException | SQLException e) {
                     System.err.println("Error de valicación de nombre de usuario " + e);
                     JOptionPane.showMessageDialog(null, "Error al intentar obtener usuarios contáctese con su administrador");
