@@ -146,7 +146,7 @@ public class Login extends javax.swing.JFrame {
     private void boton_iniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_iniActionPerformed
 
         //RECUPERACIÓN DE LOS DATOS USUARIO Y CONTRASEÑA EN LAS VARIABLES ESTÁTICAS USER Y PASS.
-        user = txt_user.getText().trim();
+        user = txt_user.getText().trim().toLowerCase();
         pass = txt_pass.getText().trim();
 
         //VALIDACIÓN DE DATOS DE LOS CAMPOS USUARIO Y CONTRASEÑA.

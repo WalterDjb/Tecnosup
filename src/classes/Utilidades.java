@@ -18,6 +18,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -179,5 +181,15 @@ public class Utilidades {
                 button.setIcon(new ImageIcon("src/images/desp.png"));
             }
         });
+    }
+    
+    public static void crearDesplegableParaBoton(String[] opciones, JButton button){
+        JPopupMenu menu = new JPopupMenu();
+        
+        for(int i = 0; i < opciones.length; i++){
+            menu.add(new JMenuItem(opciones[i]));
+        }
+        
+        button.setComponentPopupMenu(menu);
     }
 }

@@ -7,6 +7,7 @@ package windows;
 
 import java.sql.*;
 import classes.Conexion;
+import classes.Utilidades;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.logging.Level;
@@ -18,9 +19,6 @@ import javax.swing.WindowConstants;
  * @author Walter Benítez
  */
 public class Admin extends javax.swing.JFrame {
-
-    private String name;
-    private int sesion;
 
     /**
      * Creates new form Admin
@@ -37,14 +35,15 @@ public class Admin extends javax.swing.JFrame {
         //RECUPERAR EL NOMBRE DEL USUARIO QUE INICIA SESIÓN PARA MOSTRARLO EN PANTALLA
         try {
             Connection cn = Conexion.connect();
-            PreparedStatement pst = cn.prepareStatement("select name from users where username = '" + Login.user + "'");
+            PreparedStatement pst = cn.prepareStatement("select name, last_name from users where username = '" + Login.user + "'");
 
             ResultSet rs = pst.executeQuery();
 
             if (rs.next()) {
-                name = rs.getString("name");
-                label_name_user.setText(name);
+                label_name_user.setText(rs.getString("name") + " " + rs.getString("last_name"));
+                label_user_user.setText(Login.user);
             }
+
         } catch (Exception e) {
             System.err.println("Error en conexión desde Admin.java " + e);
         }
@@ -68,6 +67,8 @@ public class Admin extends javax.swing.JFrame {
 
         label_ref = new javax.swing.JLabel();
         label_name_user = new javax.swing.JLabel();
+        label_user_user = new javax.swing.JLabel();
+        boton_desplegable_user = new javax.swing.JButton();
         boton_registrar = new javax.swing.JButton();
         boton_gestion_user = new javax.swing.JButton();
         boton_provisorio = new javax.swing.JButton();
@@ -88,7 +89,18 @@ public class Admin extends javax.swing.JFrame {
         label_name_user.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         label_name_user.setForeground(new java.awt.Color(255, 255, 255));
         label_name_user.setText("Walter Eduardo Benítez");
-        getContentPane().add(label_name_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 40, -1, -1));
+        getContentPane().add(label_name_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 32, 560, -1));
+
+        label_user_user.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        label_user_user.setForeground(new java.awt.Color(153, 153, 153));
+        label_user_user.setText("walterdjb");
+        getContentPane().add(label_user_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 49, 560, -1));
+
+        Utilidades.crearDesplegableParaBoton(new String[] {"Cerrar sesión"}, boton_desplegable_user);
+        boton_desplegable_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/perfil_0.png"))); // NOI18N
+        boton_desplegable_user.setBorderPainted(false);
+        boton_desplegable_user.setContentAreaFilled(false);
+        getContentPane().add(boton_desplegable_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 28, 45, 45));
 
         boton_registrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user.png"))); // NOI18N
         boton_registrar.setBorderPainted(false);
@@ -203,6 +215,7 @@ public class Admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_desplegable_user;
     private javax.swing.JButton boton_exit;
     private javax.swing.JButton boton_gestion_user;
     private javax.swing.JButton boton_info;
@@ -212,5 +225,6 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JButton boton_tecnico;
     private javax.swing.JLabel label_name_user;
     private javax.swing.JLabel label_ref;
+    private javax.swing.JLabel label_user_user;
     // End of variables declaration//GEN-END:variables
 }
