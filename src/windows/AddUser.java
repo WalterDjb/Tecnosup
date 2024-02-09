@@ -49,7 +49,7 @@ public class AddUser extends javax.swing.JFrame {
 
         //ACTUALIZACIÓN DE ICONO DE VALIDACION SI EL USUARIO YA SE ENCUENTRA EN LA BASE DE DATOS
         Utilidades.verificarUsuario(txt_user, label_user_ver);
-        
+
         //CAMBIO DE ICONO VALIDACIÓN PARA TODOS LOS CAMPOS
         Utilidades.verificarCampo(txt_name, label_name_ver, 3, 20, false);
         Utilidades.verificarCampo(txt_last_name, label_last_name_ver, 3, 20, false);
@@ -301,46 +301,44 @@ public class AddUser extends javax.swing.JFrame {
 
     private void boton_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_saveActionPerformed
         int i = 0;
-        
+
         //ACTUALIZACIÓN DE ICONO DE VALIDACION DE CAMPO DE TEXTO
-        if(txt_name.getText().trim().equals("")){
-            if(txt_name.getText().trim().equals("")){
-                Utilidades.colocarImagen("src/images/warn_20x20.png", label_name_ver);
-                i++;
-            }
-            
-            if(txt_last_name.getText().trim().equals("")){
-                Utilidades.colocarImagen("src/images/warn_20x20.png", label_last_name_ver);
-                i++;
-            }
-            
-            if(txt_phone.getText().trim().equals("")){
-                Utilidades.colocarImagen("src/images/warn_20x20.png", label_phone_ver);
-                i++;
-            }
-            
-            if(txt_mail.getText().trim().equals("")){
-                Utilidades.colocarImagen("src/images/warn_20x20.png", label_mail_ver);
-                i++;
-            }
-            
-            if(txt_user.getText().trim().equals("")){
-                Utilidades.colocarImagen("src/images/warn_20x20.png", label_user_ver);
-                i++;
-            }
-            
-            if(txt_pass.getText().trim().equals("")){
-                Utilidades.colocarImagen("src/images/warn_20x20.png", label_pass_ver);
-                i++;
-            }
-            
-            
-            //VERIFICACIÓN DE DATOS VÁLIDOS POR CADA CAMPO Y AVISO AL USUARIO DE ACUERDO AL ERROR
-            if(i == 0){
-                
-            } else {
-                JOptionPane.showMessageDialog(null, "Debe completar todos los campos");
-            }
+        if (txt_name.getText().trim().equals("")) {
+            Utilidades.colocarImagen("src/images/warn_20x20.png", label_name_ver);
+            i++;
+        }
+
+        if (txt_last_name.getText().trim().equals("")) {
+            Utilidades.colocarImagen("src/images/warn_20x20.png", label_last_name_ver);
+            i++;
+        }
+
+        if (txt_phone.getText().trim().equals("")) {
+            Utilidades.colocarImagen("src/images/warn_20x20.png", label_phone_ver);
+            i++;
+        }
+
+        if (txt_mail.getText().trim().equals("")) {
+            Utilidades.colocarImagen("src/images/warn_20x20.png", label_mail_ver);
+            i++;
+        }
+
+        if (txt_user.getText().trim().equals("")) {
+            Utilidades.colocarImagen("src/images/warn_20x20.png", label_user_ver);
+            i++;
+        }
+
+        if (txt_pass.getText().trim().equals("")) {
+            Utilidades.colocarImagen("src/images/warn_20x20.png", label_pass_ver);
+            i++;
+        }
+
+        //VERIFICACIÓN DE DATOS VÁLIDOS POR CADA CAMPO Y AVISO AL USUARIO DE ACUERDO AL ERROR
+        if (i == 0) {
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe completar todos los campos");
+            i = 0;
         }
     }//GEN-LAST:event_boton_saveActionPerformed
 
@@ -377,11 +375,7 @@ public class AddUser extends javax.swing.JFrame {
             public void run() {
                 try {
                     new AddUser().setVisible(true);
-                } catch (NoSuchFieldException ex) {
-                    Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IllegalArgumentException ex) {
-                    Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IllegalAccessException ex) {
+                } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException ex) {
                     Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
