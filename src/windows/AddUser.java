@@ -360,9 +360,48 @@ public class AddUser extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "El usuario está ocupado, cámbielo y vuelva a intentarlo");
                         cn.close();
                     } else {
+                        cn.close();
+
                         try {
-                            cn.prepareStatement("");
-                        } catch (Exception e) {
+                            pst = cn.prepareStatement("insert into users values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+                            pst.setInt(1, 0);
+                            pst.setString(2, txt_name.getText().trim());
+                            pst.setString(3, txt_last_name.getText().trim());
+                            pst.setString(4, txt_phone.getText().trim());
+                            pst.setString(5, txt_mail.getText().trim());
+                            pst.setString(6, txt_user.getText().trim());
+                            pst.setString(7, txt_pass.getText().trim());
+
+                            switch (combo_rol.getSelectedIndex()) {
+                                case 0:
+                                    pst.setString(8, "ADM");
+                                    break;
+                                case 1:
+                                    pst.setString(8, "REC");
+                                    break;
+                                case 2:
+                                    pst.setString(8, "TEC");
+                            }
+
+                            pst.setString(9, "active");
+                            pst.setString(10, Login.user);
+
+                            pst.executeUpdate();
+                            cn.close();
+
+                            JOptionPane.showMessageDialog(null, "Usuario guardado");
+                            
+                            txt_name.setText("");
+                            txt_last_name.setText("");
+                            txt_phone.setText("");
+                            txt_mail.setText("");
+                            txt_user.setText("");
+                            txt_pass.setText("");
+                            
+                        } catch (SQLException e) {
+                            System.err.println("Error en registrar usuario " + e);
+                            JOptionPane.showMessageDialog(null, "Error al guardar usuario, contacte a su administrador");
                         }
                     }
 
