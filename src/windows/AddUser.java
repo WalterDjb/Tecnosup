@@ -13,6 +13,7 @@ import javax.swing.WindowConstants;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import classes.CustomComboBoxUI;
+import java.awt.HeadlessException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -336,37 +337,38 @@ public class AddUser extends javax.swing.JFrame {
 
         //VERIFICACIÓN DE DATOS VÁLIDOS POR CADA CAMPO Y AVISO AL USUARIO DE ACUERDO AL ERROR
         if (i == 0) {
-            if(txt_name.getText().trim().length() < 3 || txt_name.getText().trim().length() > 20){
+            if (txt_name.getText().trim().length() < 3 || txt_name.getText().trim().length() > 20) {
                 JOptionPane.showMessageDialog(null, "El nombre debe de tener entre 3 a 20 carácteres");
-            } else if(txt_last_name.getText().trim().length() < 3 || txt_last_name.getText().trim().length() > 20){
+            } else if (txt_last_name.getText().trim().length() < 3 || txt_last_name.getText().trim().length() > 20) {
                 JOptionPane.showMessageDialog(null, "El apellido debe tener entre 3 a 20 carácteres");
-            } else if(txt_phone.getText().trim().length() < 10 || txt_phone.getText().trim().length() > 13){
+            } else if (txt_phone.getText().trim().length() < 10 || txt_phone.getText().trim().length() > 13) {
                 JOptionPane.showMessageDialog(null, "El número de teléfono debe tener entre 10 a 13 números");
-            } else if(!Utilidades.isValidMail(txt_mail)){
+            } else if (!Utilidades.isValidMail(txt_mail)) {
                 JOptionPane.showMessageDialog(null, "Verifique su correo electrónico y vuelva a intentar");
-            } else if(txt_user.getText().trim().length() < 4 || txt_user.getText().trim().length() > 20){
+            } else if (txt_user.getText().trim().length() < 4 || txt_user.getText().trim().length() > 20) {
                 JOptionPane.showMessageDialog(null, "El usuario debe de tener entre 4 a 20 carácteres");
-            } else if(txt_pass.getText().trim().length() < 4 || txt_pass.getText().trim().length() > 20){
+            } else if (txt_pass.getText().trim().length() < 4 || txt_pass.getText().trim().length() > 20) {
                 JOptionPane.showMessageDialog(null, "La contraseña debe de tener entre 4 a 20 carácteres");
-            } else{
+            } else {
                 try {
                     Connection cn = Conexion.connect();
                     PreparedStatement pst = cn.prepareStatement("select username from users where username = '" + txt_user.getText().trim() + "'");
-                    
+
                     ResultSet rs = pst.executeQuery();
-                    
-                    if(rs.next()){
+
+                    if (rs.next()) {
                         JOptionPane.showMessageDialog(null, "El usuario está ocupado, cámbielo y vuelva a intentarlo");
                         cn.close();
                     } else {
                         try {
-                            
-                            
+                            cn.prepareStatement("");
                         } catch (Exception e) {
                         }
                     }
-                    
-                } catch (Exception e) {
+
+                } catch (HeadlessException | SQLException e) {
+                    System.err.println("Error de valicación de nombre de usuario " + e);
+                    JOptionPane.showMessageDialog(null, "Error al intentar obtener usuarios contáctese con su administrador");
                 }
             }
         } else {
