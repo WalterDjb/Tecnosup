@@ -12,6 +12,8 @@ import javax.swing.WindowConstants;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import classes.CustomComboBoxUI;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,7 +24,7 @@ public class AddUser extends javax.swing.JFrame {
     /**
      * Creates new form Admin
      */
-    public AddUser() {
+    public AddUser() throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
         initComponents();
         combo_rol.setUI(new CustomComboBoxUI());
         Utilidades.actualizarIconBotonComboBox(combo_rol);
@@ -373,7 +375,15 @@ public class AddUser extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddUser().setVisible(true);
+                try {
+                    new AddUser().setVisible(true);
+                } catch (NoSuchFieldException ex) {
+                    Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalArgumentException ex) {
+                    Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

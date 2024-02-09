@@ -7,6 +7,7 @@ package classes;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,6 +23,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
+import javax.swing.plaf.basic.BasicComboBoxUI;
 
 /**
  *
@@ -164,23 +166,27 @@ public class Utilidades {
         }
     }
 
-    public static void actualizarIconBotonComboBox(JComboBox combo) {
+    public static void actualizarIconBotonComboBox(JComboBox combo) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
         //JButton button = (JButton) combo.getUI().getAccessibleChild(combo, 0);
+        BasicComboBoxUI ui = (BasicComboBoxUI) combo.getUI();
+        Field arrowButtonField = BasicComboBoxUI.class.getDeclaredField("arrowButton");
+        arrowButtonField.setAccessible(true);
+        JButton button = (JButton) arrowButtonField.get(ui);
         
         combo.addPopupMenuListener(new PopupMenuListener() {
             @Override
             public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-                //button.setIcon(new ImageIcon("src/images/desp_true.png"));
+                button.setIcon(new ImageIcon("src/images/desp_true.png"));
             }
 
             @Override
             public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-                //button.setIcon(new ImageIcon("src/images/desp.png"));
+                button.setIcon(new ImageIcon("src/images/desp.png"));
             }
 
             @Override
             public void popupMenuCanceled(PopupMenuEvent e) {
-                //button.setIcon(new ImageIcon("src/images/desp.png"));
+                button.setIcon(new ImageIcon("src/images/desp.png"));
             }
         });
     }

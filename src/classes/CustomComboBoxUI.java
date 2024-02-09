@@ -22,9 +22,9 @@ public class CustomComboBoxUI extends BasicComboBoxUI {
     @Override
     protected JButton createArrowButton() {
         JButton button = new JButton();
-        button.setMinimumSize(new Dimension(4, 4));
-        button.setMaximumSize(new Dimension(4, 4));
-        button.setPreferredSize(new Dimension(4, 4));
+        button.setMinimumSize(new Dimension(1, 1));
+        button.setMaximumSize(new Dimension(1, 1));
+        button.setPreferredSize(new Dimension(1, 1));
         button.setContentAreaFilled(false);
         button.setIcon(new ImageIcon("src/images/desp.png"));
 
