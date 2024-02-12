@@ -12,6 +12,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 import javax.swing.WindowConstants;
 
 /**
@@ -24,7 +26,7 @@ public class Admin extends javax.swing.JFrame {
      * Creates new form Admin
      */
     public Admin() {
-        initComponents();
+        initComponents();      
         getContentPane().setBackground(new java.awt.Color(20, 34, 34));
         setSize(650, 430);
         setResizable(false);
@@ -96,10 +98,14 @@ public class Admin extends javax.swing.JFrame {
         label_user_user.setText("walterdjb");
         getContentPane().add(label_user_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 49, 560, -1));
 
-        Utilidades.crearDesplegableParaBoton(new String[] {"Cerrar sesión"}, boton_desplegable_user);
         boton_desplegable_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/perfil_0.png"))); // NOI18N
         boton_desplegable_user.setBorderPainted(false);
         boton_desplegable_user.setContentAreaFilled(false);
+        boton_desplegable_user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_desplegable_userActionPerformed(evt);
+            }
+        });
         getContentPane().add(boton_desplegable_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 28, 45, 45));
 
         boton_registrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user.png"))); // NOI18N
@@ -178,6 +184,10 @@ public class Admin extends javax.swing.JFrame {
         }
         dispose();
     }//GEN-LAST:event_boton_registrarActionPerformed
+
+    private void boton_desplegable_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_desplegable_userActionPerformed
+        this.getComponent(0).enable();
+    }//GEN-LAST:event_boton_desplegable_userActionPerformed
 
     /**
      * @param args the command line arguments

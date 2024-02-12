@@ -190,6 +190,7 @@ public class Utilidades {
             menu.add(new JMenuItem(opciones[i]));
         }
         
+        menu.setLocation(button.getX(), button.getY() + button.getHeight());
         button.setComponentPopupMenu(menu);
     }
 }
