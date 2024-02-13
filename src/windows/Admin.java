@@ -26,7 +26,8 @@ public class Admin extends javax.swing.JFrame {
      * Creates new form Admin
      */
     public Admin() {
-        initComponents();      
+        initComponents();
+        Utilidades.crearDesplegableParaBoton(new String[]{"Cerrar sesión"}, boton_desplegable_user);
         getContentPane().setBackground(new java.awt.Color(20, 34, 34));
         setSize(650, 430);
         setResizable(false);
@@ -186,7 +187,14 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_registrarActionPerformed
 
     private void boton_desplegable_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_desplegable_userActionPerformed
-        this.getComponent(0).enable();
+
+        System.err.println(boton_desplegable_user.getComponentPopupMenu().isVisible());
+        
+        if(boton_desplegable_user.getComponentPopupMenu().isVisible()){
+            boton_desplegable_user.getComponentPopupMenu().setVisible(false);
+        } else {
+            boton_desplegable_user.getComponentPopupMenu().show(boton_desplegable_user, 5, boton_desplegable_user.getHeight());
+        }
     }//GEN-LAST:event_boton_desplegable_userActionPerformed
 
     /**

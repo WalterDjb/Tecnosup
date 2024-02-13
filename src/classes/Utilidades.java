@@ -7,6 +7,7 @@ package classes;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.Point;
 import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -190,7 +191,9 @@ public class Utilidades {
             menu.add(new JMenuItem(opciones[i]));
         }
         
-        menu.setLocation(button.getX(), button.getY() + button.getHeight());
+        menu.enable(true);
         button.setComponentPopupMenu(menu);
+        System.err.println("X: " + button.getX() + " Y: " + button.getY());
+        System.out.println(menu.getLocation());
     }
 }
