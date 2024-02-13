@@ -185,10 +185,7 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_registrarActionPerformed
 
     private void boton_desplegable_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_desplegable_userActionPerformed
-
-        System.err.println(boton_desplegable_user.getComponentPopupMenu().isVisible());
-        
-        if(boton_desplegable_user.getComponentPopupMenu().isVisible()){
+        if (boton_desplegable_user.getComponentPopupMenu().isVisible()) {
             boton_desplegable_user.getComponentPopupMenu().setVisible(false);
         } else {
             boton_desplegable_user.getComponentPopupMenu().show(boton_desplegable_user, 5, boton_desplegable_user.getHeight());

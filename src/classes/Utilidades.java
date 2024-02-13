@@ -191,9 +191,6 @@ public class Utilidades {
             menu.add(new JMenuItem(opciones[i]));
         }
         
-        menu.enable(true);
         button.setComponentPopupMenu(menu);
-        System.err.println("X: " + button.getX() + " Y: " + button.getY());
-        System.out.println(menu.getLocation());
     }
 }
