@@ -12,8 +12,6 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
 import javax.swing.WindowConstants;
 
 /**
